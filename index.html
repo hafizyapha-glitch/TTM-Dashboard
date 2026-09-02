@@ -11,7 +11,6 @@
   <!-- External Libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
   
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -68,8 +67,8 @@
     .kpi-group-label { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 12px; margin-top: 8px; }
     
     .kpi-grid { display: grid; gap: 16px; margin-bottom: 16px; }
-    .kpi-grid.row4 { grid-template-columns: repeat(4,1fr); }
-    .kpi-grid.row3 { grid-template-columns: repeat(3,1fr); }
+    .kpi-grid.row4 { grid-template-columns: repeat(4, 1fr); }
+    .kpi-grid.row3 { grid-template-columns: repeat(3, 1fr); }
     
     .kpi-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; box-shadow: var(--shadow-sm); display: grid; grid-template-areas: "label icon" "value icon" "sub sub"; grid-template-columns: 1fr auto; align-items: start; transition: transform .2s, box-shadow .2s; }
     .kpi-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
@@ -77,11 +76,9 @@
     .kpi-icon svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 1.75; }
     .kpi-label { grid-area: label; font-size: 13px; font-weight: 500; color: var(--text-secondary); margin-bottom: 4px; }
     .kpi-value { grid-area: value; font-size: 24px; font-weight: 700; font-family: 'Inter',sans-serif; color: var(--text); line-height: 1.2; margin-bottom: 8px; }
-    .kpi-sub { grid-area: sub; font-size: 12px; color: var(--muted); }
 
     .charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
     .chart-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; position: relative;}
-    .chart-card.wide { grid-column: span 2; }
     
     .chart-header-row { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; }
     .chart-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
@@ -120,13 +117,13 @@
     .sortable:hover { color: var(--primary); }
     .sort-icon { display: inline-block; width: 12px; margin-left: 4px; font-size: 10px; color: var(--primary); }
 
-    .badge { display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 500; }
     .num { font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; }
     .cost-cell { font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; }
     .text-blue { color: #2563EB; font-weight: 600; }
 
     #statusBar { display: none; background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2); border-radius: 8px; padding: 12px 16px; font-size: 14px; font-weight: 500; color: var(--green); margin-bottom: 16px; }
 
+    /* Drawer & Settings */
     .drawer-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.5); z-index: 999; opacity: 0; visibility: hidden; transition: all 0.3s ease; }
     .drawer-overlay.show { opacity: 1; visibility: visible; }
     .drawer { position: fixed; top: 0; right: -400px; width: 100%; max-width: 400px; height: 100vh; background: var(--card); z-index: 1000; box-shadow: -4px 0 15px rgba(0,0,0,0.1); transition: right 0.3s ease; display: flex; flex-direction: column; border-left: 1px solid var(--border); }
@@ -140,17 +137,19 @@
     .setting-label { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
     .setting-desc { font-size: 12px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.5; }
     
+    @media (max-width: 1024px) {
+      .kpi-grid.row4 { grid-template-columns: repeat(2, 1fr); }
+    }
     @media (max-width: 900px) {
       .main { padding: 16px; gap: 16px; }
       .charts-grid { grid-template-columns: 1fr; }
-      .chart-card.wide { grid-column: span 1; }
       .header { padding: 16px; flex-direction: column; gap: 16px; align-items: flex-start; }
       .month-selector-wrapper { align-items: flex-start; margin-right: 0; width: 100%; }
       .header-right { width: 100%; justify-content: space-between; }
-      .kpi-grid.row3, .kpi-grid.row4 { grid-template-columns: repeat(2,1fr); }
+      .kpi-grid.row3 { grid-template-columns: repeat(2,1fr); }
     }
     @media (max-width: 600px) {
-      .kpi-grid.row3, .kpi-grid.row4 { grid-template-columns: 1fr; }
+      .kpi-grid.row4, .kpi-grid.row3 { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -226,26 +225,27 @@
         <table>
           <thead><tr>
             <th>Keyword</th>
-            <th class="cost-cell">Spend (฿)</th>
+            <th class="cost-cell">Cost (฿)</th>
             <th class="num">Impr.</th>
             <th class="num">Clicks</th>
             <th class="num">CTR (%)</th>
-            <th class="num">Conversions</th>
+            <th class="num">Conv.</th>
             <th class="num">CVR (%)</th>
           </tr></thead>
           <tbody id="keywordTableBody">
-             <tr><td colspan="7" style="text-align:center; color:var(--muted);">รอประมวลผลข้อมูล...</td></tr>
+             <tr><td colspan="7" style="text-align:center; color:var(--muted);">ไม่พบข้อมูล Keyword ในระบบ</td></tr>
           </tbody>
         </table>
       </div>
     </div>
 
+    <!-- Top Ads Section -->
     <div class="charts-grid" style="margin-top: 24px;">
       
       <!-- Top Ad Creative Box -->
       <div class="chart-card">
         <div class="chart-header-row">
-          <div style="flex-grow: 1;">
+          <div>
             <div id="topAdTitle1" class="chart-title editable-title">Top Ad Creative</div>
             <div id="topAdSub1" class="chart-sub editable-title">ชิ้นงานโฆษณาที่ทำผลงานได้ดีที่สุด</div>
           </div>
@@ -261,7 +261,7 @@
       <!-- Top Ads Performance Box -->
       <div class="chart-card">
         <div class="chart-header-row">
-          <div style="flex-grow: 1;">
+          <div>
             <div id="topAdTitle2" class="chart-title editable-title">Top Ads Performance</div>
             <div id="topAdSub2" class="chart-sub editable-title">สถิติของชิ้นงานโฆษณาที่ทำผลงานได้ดีที่สุด</div>
           </div>
@@ -284,6 +284,7 @@
       
     </div>
 
+    <!-- Ad Performance Tabs -->
     <div class="table-card">
       <div class="tab-bar">
         <button class="tab-btn active" onclick="window.switchTableTab(event, 'adPerformance')">Ad Performance</button>
@@ -476,11 +477,8 @@ window.fetchMissingYear = async function(year) {
   };
 
   for (let month of months) {
-      // 1. Facebook Ads
       let fb = await processFile(`./data/facebook/${year}-${month}-TTM-FB`, 'Facebook');
-      // 2. Google Ads
       let gg = await processFile(`./data/google/${year}-${month}-TTM-GG`, 'Google');
-      // 3. Google Keyword
       let kw = await processFile(`./data/google/keyword/${year}-${month}-TTM-KW`, 'Google', true);
 
       if (fb || gg || kw) foundAny = true;
@@ -582,7 +580,7 @@ function createKPICard(icon, label, value, color) {
 window.renderKPIs = function() {
   const fbData = filteredData.filter(r => r.platform === 'Facebook');
   const ggData = filteredData.filter(r => r.platform === 'Google');
-  const d = filteredData; // Overview = FB + GG
+  const d = filteredData;
 
   const iconSpend = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"/><path d="M4 6v12c0 1.1.9 2 2 2h14v-4"/><path d="M18 12a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4v-4h-4z"/></svg>';
   const iconReach = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>';
@@ -592,7 +590,6 @@ window.renderKPIs = function() {
   const iconFreq = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><line x1="3" y1="3" x2="3" y2="21"/><line x1="3" y1="21" x2="21" y2="21"/><polyline points="7 16 11 12 15 14 20 9"/></svg>';
   const iconCost = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="12" y1="2" x2="12" y2="6"/></svg>';
 
-  // Helper to generate metrics
   const getMetrics = (dataSet, hasReach = true) => {
     const spend = dataSet.reduce((s,r)=>s+r.spend,0);
     const reach = dataSet.reduce((s,r)=>s+r.reach,0);
@@ -615,7 +612,6 @@ window.renderKPIs = function() {
 
   let html = '';
 
-  // 1. OVERVIEW
   html += `
     <div class="kpi-section-title">Overview</div>
     <div class="kpi-group-label">Performance</div>
@@ -636,7 +632,6 @@ window.renderKPIs = function() {
     </div>
   `;
 
-  // 2. FACEBOOK
   html += `
     <div class="kpi-section-title" style="color:#1877F2; margin-top:32px;">Facebook Ads Performance</div>
     <div class="kpi-group-label">Performance</div>
@@ -657,7 +652,6 @@ window.renderKPIs = function() {
     </div>
   `;
 
-  // 3. GOOGLE
   html += `
     <div class="kpi-section-title" style="color:#EA4335; margin-top:32px;">Google Ads Performance</div>
     <div class="kpi-group-label">Performance</div>
@@ -682,11 +676,11 @@ window.renderKeywordTable = function() {
   const groupedObj = {};
   filteredKeywordData.forEach(r => {
     const kw = r.keyword;
-    if (!groupedObj[kw]) groupedObj[kw] = { keyword: kw, spend: 0, impr: 0, clicks: 0, conversions: 0 };
+    if (!groupedObj[kw]) groupedObj[kw] = { keyword: kw, spend: 0, impr: 0, clicks: 0, conv: 0 };
     groupedObj[kw].spend += r.spend;
     groupedObj[kw].impr += r.impressions;
     groupedObj[kw].clicks += r.clicks;
-    groupedObj[kw].conversions += r.conversions;
+    groupedObj[kw].conv += r.conversions;
   });
 
   const top10 = Object.values(groupedObj).sort((a,b) => b.clicks - a.clicks).slice(0, 10);
@@ -699,14 +693,14 @@ window.renderKeywordTable = function() {
 
   tbody.innerHTML = top10.map(r => {
     const ctr = r.impr > 0 ? (r.clicks / r.impr) * 100 : 0;
-    const cvr = r.clicks > 0 ? (r.conversions / r.clicks) * 100 : 0;
+    const cvr = r.clicks > 0 ? (r.conv / r.clicks) * 100 : 0;
     return `<tr>
       <td>${r.keyword}</td>
       <td class="cost-cell">฿${formatDec(r.spend)}</td>
       <td class="num">${formatNum(r.impr)}</td>
       <td class="num">${formatNum(r.clicks)}</td>
       <td class="num text-blue">${formatDec(ctr)}%</td>
-      <td class="num">${formatDec(r.conversions)}</td>
+      <td class="num">${formatDec(r.conv)}</td>
       <td class="num text-blue">${formatDec(cvr)}%</td>
     </tr>`;
   }).join('');
@@ -741,7 +735,7 @@ window.renderTopAdsMetrics = function() {
       <div class="top-metric-item"><div class="tm-label">CPC</div><div class="tm-val">฿${tClick>0?formatDec(tSpend/tClick):'0.00'}</div></div>
       <div class="top-metric-item"><div class="tm-label">CPL</div><div class="tm-val">฿${tLead>0?formatDec(tSpend/tLead):'0.00'}</div></div>`;
   } else {
-    container.innerHTML = `<div style="color:var(--muted); font-size:13px; padding:12px; grid-column:span 3;"></div>`;
+    container.innerHTML = `<div style="color:var(--muted); font-size:13px; padding:12px; grid-column:span 3;">ไม่พบข้อมูลแคมเปญ</div>`;
   }
 }
 
