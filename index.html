@@ -580,7 +580,7 @@ function createKPICard(icon, label, value, color) {
 window.renderKPIs = function() {
   const fbData = filteredData.filter(r => r.platform === 'Facebook');
   const ggData = filteredData.filter(r => r.platform === 'Google');
-  const d = filteredData;
+  const d = filteredData; // Overview
 
   const iconSpend = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"/><path d="M4 6v12c0 1.1.9 2 2 2h14v-4"/><path d="M18 12a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4v-4h-4z"/></svg>';
   const iconReach = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>';
@@ -612,6 +612,7 @@ window.renderKPIs = function() {
 
   let html = '';
 
+  // 1. OVERVIEW
   html += `
     <div class="kpi-section-title">Overview</div>
     <div class="kpi-group-label">Performance</div>
@@ -632,6 +633,7 @@ window.renderKPIs = function() {
     </div>
   `;
 
+  // 2. FACEBOOK
   html += `
     <div class="kpi-section-title" style="color:#1877F2; margin-top:32px;">Facebook Ads Performance</div>
     <div class="kpi-group-label">Performance</div>
@@ -652,6 +654,7 @@ window.renderKPIs = function() {
     </div>
   `;
 
+  // 3. GOOGLE
   html += `
     <div class="kpi-section-title" style="color:#EA4335; margin-top:32px;">Google Ads Performance</div>
     <div class="kpi-group-label">Performance</div>
