@@ -225,7 +225,7 @@
         <table>
           <thead><tr>
             <th>Keyword</th>
-            <th class="cost-cell">Cost (฿)</th>
+            <th class="cost-cell">Spend (฿)</th>
             <th class="num">Impr.</th>
             <th class="num">Clicks</th>
             <th class="num">CTR (%)</th>
@@ -450,13 +450,20 @@ window.fetchMissingYear = async function(year) {
   let kwTemp = [];
   let foundAny = false;
   
-  const processFile = async (path, platform, isKeyword = false) => {
+  const processFile = async (path, platform, monthName, isKeyword = false) => {
       try {
           let res = await fetch(`${path}.csv`);
           if (res.ok) {
-              const text = await res.text();
+              let text = await res.text();
+              
+              // Skip the first two rows for Google Ads standard exports automatically
+              if (text.startsWith("Campaign report") || text.startsWith("Search keyword report")) {
+                  const lines = text.split('\n');
+                  text = lines.slice(2).join('\n');
+              }
+              
               Papa.parse(text, { header: true, skipEmptyLines: true, complete: r => {
-                  const mapped = r.data.map(row => ({...row, platform: platform}));
+                  const mapped = r.data.map(row => ({...row, platform: platform, inferredMonth: monthName}));
                   if (isKeyword) kwTemp = kwTemp.concat(mapped);
                   else temp = temp.concat(mapped);
               }});
@@ -467,7 +474,15 @@ window.fetchMissingYear = async function(year) {
               const arrayBuffer = await res.arrayBuffer();
               const wb = XLSX.read(arrayBuffer, { type: 'array' });
               const ws = wb.Sheets[wb.SheetNames[0]];
-              const mapped = XLSX.utils.sheet_to_json(ws, { defval: 0 }).map(row => ({...row, platform: platform}));
+              
+              // Skip the first two rows for Google Ads standard exports in excel automatically
+              let skipRows = 0;
+              let firstCell = ws['A1'] ? ws['A1'].v.toString() : '';
+              if (firstCell.includes('Campaign report') || firstCell.includes('Search keyword report')) {
+                  skipRows = 2;
+              }
+              
+              const mapped = XLSX.utils.sheet_to_json(ws, { defval: 0, range: skipRows }).map(row => ({...row, platform: platform, inferredMonth: monthName}));
               if (isKeyword) kwTemp = kwTemp.concat(mapped);
               else temp = temp.concat(mapped);
               return true;
@@ -477,45 +492,51 @@ window.fetchMissingYear = async function(year) {
   };
 
   for (let month of months) {
-      let fb = await processFile(`./data/facebook/${year}-${month}-TTM-FB`, 'Facebook');
-      let gg = await processFile(`./data/google/${year}-${month}-TTM-GG`, 'Google');
-      let kw = await processFile(`./data/google/keyword/${year}-${month}-TTM-KW`, 'Google', true);
+      let fb = await processFile(`./data/facebook/${year}-${month}-TTM-FB`, 'Facebook', month);
+      let gg = await processFile(`./data/google/${year}-${month}-TTM-GG`, 'Google', month);
+      let kw = await processFile(`./data/google/keyword/${year}-${month}-TTM-KW`, 'Google', month, true);
 
       if (fb || gg || kw) foundAny = true;
   }
   
   if (foundAny) {
+      // Clean commas from raw string numbers
+      const parseNum = (val) => parseInt((val||'0').toString().replace(/,/g, '')) || 0;
+      const parseDec = (val) => parseFloat((val||'0').toString().replace(/,/g, '')) || 0;
+
       const parsed = temp.map(r => {
         return {
           platform: r.platform,
-          campaign: r['Campaign name']||r['campaign']||'', 
-          ad: r['Ad name']||r['ad']||r['Ad group']||'', 
-          month: r['Month'] || r['month'] || 'Total',
+          campaign: r['Campaign name']||r['campaign']||r['Campaign']||'', 
+          // Use Campaign as fallback if Ad name doesn't exist
+          ad: r['Ad name']||r['ad']||r['Ad group']||r['Campaign name']||r['Campaign']||'Unknown', 
+          month: r['Month'] || r['month'] || r.inferredMonth || 'Total',
           year: year,
-          spend: parseFloat(r['Amount spent (THB)']||r['spend']||r['Cost']||0)||0,
-          reach: parseInt(r['Reach']||0)||0, 
-          impressions: parseInt(r['Impressions']||r['Impr.']||0)||0,
-          clicks: parseInt(r['Clicks']||r['Link clicks']||0)||0,
-          leads: parseInt(r['Leads'] || r['leads'] || r['Results'] || r['Conversions'] || 0) || 0,
-          engagements: parseInt(r['Post engagements']||0)||0,
-          reactions: parseInt(r['Post reactions']||0)||0,
-          comments: parseInt(r['Post comments']||0)||0, 
-          shares: parseInt(r['Post shares']||0)||0
+          spend: parseDec(r['Amount spent (THB)']||r['spend']||r['Cost']),
+          reach: parseNum(r['Reach']), 
+          impressions: parseNum(r['Impressions']||r['Impr.']),
+          clicks: parseNum(r['Clicks']||r['Link clicks']||r['Clicks (all)']),
+          leads: parseNum(r['Leads'] || r['leads'] || r['Results'] || r['Conversions'] || r['Submit lead form']),
+          engagements: parseNum(r['Post engagements']),
+          reactions: parseNum(r['Post reactions']),
+          comments: parseNum(r['Post comments']), 
+          shares: parseNum(r['Post shares'])
         };
-      }).filter(r => r.ad && r.ad !== '-');
-      allData = allData.concat(parsed);
+      }).filter(r => r.campaign && r.campaign !== '-'); 
 
       const parsedKw = kwTemp.map(r => {
         return {
           keyword: r['Keyword'] || r['Search Keyword'] || r['keyword'] || '',
-          month: r['Month'] || r['month'] || 'Total',
+          month: r['Month'] || r['month'] || r.inferredMonth || 'Total',
           year: year,
-          spend: parseFloat(r['Cost'] || r['Cost (THB)'] || r['spend'] || 0) || 0,
-          impressions: parseInt(r['Impr.'] || r['Impressions'] || 0) || 0,
-          clicks: parseInt(r['Clicks'] || 0) || 0,
-          conversions: parseFloat(r['Conversions'] || r['conversions'] || r['Conv.'] || 0) || 0
+          spend: parseDec(r['Cost'] || r['Cost (THB)'] || r['spend']),
+          impressions: parseNum(r['Impr.'] || r['Impressions']),
+          clicks: parseNum(r['Clicks']),
+          conversions: parseDec(r['Conversions'] || r['conversions'] || r['Conv.'])
         };
       }).filter(r => r.keyword && r.keyword !== '-');
+      
+      allData = allData.concat(parsed);
       keywordData = keywordData.concat(parsedKw);
 
       window.populateFilters();
@@ -569,18 +590,29 @@ window.renderAll = function() {
 const formatNum = (v) => v.toLocaleString();
 const formatDec = (v) => v.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
 
-function createKPICard(icon, label, value, color) {
-    return `<div class="kpi-card" style="padding:16px;">
+function createKPICard(icon, label, value, color, subLabel = '', benchmark = '') {
+    let subHtml = subLabel ? `<div class="kpi-sub" style="margin-bottom: 4px;">${subLabel}</div>` : '';
+    let benchHtml = '';
+    if (benchmark) {
+        benchHtml = `
+        <div style="grid-column: 1 / -1; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+          <div style="font-size: 12px; color: var(--text-secondary);">Benchmark</div>
+          <div style="font-size: 13px; font-weight: 700; color: var(--text);">${benchmark}</div>
+        </div>`;
+    }
+    return `<div class="kpi-card" style="padding:20px;">
       <div class="kpi-label">${label}</div>
       <div class="kpi-icon" style="color:${color};background:color-mix(in srgb,${color} 12%,transparent);">${icon}</div>
       <div class="kpi-value">${value}</div>
+      ${subHtml}
+      ${benchHtml}
       </div>`;
 }
 
 window.renderKPIs = function() {
   const fbData = filteredData.filter(r => r.platform === 'Facebook');
   const ggData = filteredData.filter(r => r.platform === 'Google');
-  const d = filteredData; // Overview
+  const d = filteredData;
 
   const iconSpend = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"/><path d="M4 6v12c0 1.1.9 2 2 2h14v-4"/><path d="M18 12a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4v-4h-4z"/></svg>';
   const iconReach = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>';
@@ -612,7 +644,6 @@ window.renderKPIs = function() {
 
   let html = '';
 
-  // 1. OVERVIEW
   html += `
     <div class="kpi-section-title">Overview</div>
     <div class="kpi-group-label">Performance</div>
@@ -625,15 +656,15 @@ window.renderKPIs = function() {
       ${createKPICard(iconFreq, 'Frequency', o.freq.toFixed(2), '#8B5CF6')}
     </div>
     <div class="kpi-group-label">Cost Efficiency</div>
-    <div class="kpi-grid row4">
-      ${createKPICard(iconCost, 'Cost per 1,000 Reach', '฿'+formatDec(o.cpr), 'var(--green)')}
-      ${createKPICard(iconCost, 'CPM', '฿'+formatDec(o.cpm), 'var(--primary)')}
-      ${createKPICard(iconCost, 'CPC', '฿'+formatDec(o.cpc), 'var(--accent)')}
-      ${createKPICard(iconCost, 'Cost per Lead', '฿'+formatDec(o.cpl), '#06B6D4')}
+    <div class="kpi-grid row4" style="margin-bottom: 4px;">
+      ${createKPICard(iconCost, 'Cost per 1,000 Reach (CPR)', '฿'+formatDec(o.cpr), 'var(--green)', 'Cost per 1,000 reach', '฿80-฿150')}
+      ${createKPICard(iconCost, 'CPM', '฿'+formatDec(o.cpm), 'var(--primary)', 'Cost per 1,000 impressions', '฿50-฿150')}
+      ${createKPICard(iconCost, 'CPC', '฿'+formatDec(o.cpc), 'var(--accent)', 'Cost per click', '฿5-฿25')}
+      ${createKPICard(iconCost, 'Cost per Lead', '฿'+formatDec(o.cpl), '#06B6D4', 'Cost per lead conversion', '฿150-฿500')}
     </div>
+    <div style="text-align: right; font-size: 11px; color: var(--muted); margin-bottom: 24px;">Benchmark ref: DataReportal / Industry Average (Thailand)</div>
   `;
 
-  // 2. FACEBOOK
   html += `
     <div class="kpi-section-title" style="color:#1877F2; margin-top:32px;">Facebook Ads Performance</div>
     <div class="kpi-group-label">Performance</div>
@@ -646,15 +677,15 @@ window.renderKPIs = function() {
       ${createKPICard(iconFreq, 'Frequency', fb.freq.toFixed(2), '#8B5CF6')}
     </div>
     <div class="kpi-group-label">Cost Efficiency</div>
-    <div class="kpi-grid row4">
-      ${createKPICard(iconCost, 'Cost per 1,000 Reach', '฿'+formatDec(fb.cpr), 'var(--green)')}
-      ${createKPICard(iconCost, 'CPM', '฿'+formatDec(fb.cpm), '#1877F2')}
-      ${createKPICard(iconCost, 'CPC', '฿'+formatDec(fb.cpc), 'var(--accent)')}
-      ${createKPICard(iconCost, 'Cost per Lead', '฿'+formatDec(fb.cpl), '#06B6D4')}
+    <div class="kpi-grid row4" style="margin-bottom: 4px;">
+      ${createKPICard(iconCost, 'Cost per 1,000 Reach (CPR)', '฿'+formatDec(fb.cpr), 'var(--green)', 'Cost per 1,000 reach', '฿80-฿150')}
+      ${createKPICard(iconCost, 'CPM', '฿'+formatDec(fb.cpm), '#1877F2', 'Cost per 1,000 impressions', '฿50-฿120')}
+      ${createKPICard(iconCost, 'CPC', '฿'+formatDec(fb.cpc), 'var(--accent)', 'Cost per click', '฿3-฿15')}
+      ${createKPICard(iconCost, 'Cost per Lead', '฿'+formatDec(fb.cpl), '#06B6D4', 'Cost per lead conversion', '฿100-฿400')}
     </div>
+    <div style="text-align: right; font-size: 11px; color: var(--muted); margin-bottom: 24px;">Benchmark ref: Meta Business Suite / Wordstream Facebook Ads 2025 (Thailand)</div>
   `;
 
-  // 3. GOOGLE
   html += `
     <div class="kpi-section-title" style="color:#EA4335; margin-top:32px;">Google Ads Performance</div>
     <div class="kpi-group-label">Performance</div>
@@ -665,11 +696,12 @@ window.renderKPIs = function() {
       ${createKPICard(iconLead, 'Leads', formatNum(gg.leads), '#06B6D4')}
     </div>
     <div class="kpi-group-label">Cost Efficiency</div>
-    <div class="kpi-grid row3">
-      ${createKPICard(iconCost, 'CPM', '฿'+formatDec(gg.cpm), '#EA4335')}
-      ${createKPICard(iconCost, 'CPC', '฿'+formatDec(gg.cpc), 'var(--accent)')}
-      ${createKPICard(iconCost, 'Cost per Lead', '฿'+formatDec(gg.cpl), '#06B6D4')}
+    <div class="kpi-grid row3" style="margin-bottom: 4px;">
+      ${createKPICard(iconCost, 'CPM', '฿'+formatDec(gg.cpm), '#EA4335', 'Cost per 1,000 impressions', '฿80-฿200')}
+      ${createKPICard(iconCost, 'CPC', '฿'+formatDec(gg.cpc), 'var(--accent)', 'Cost per click', '฿10-฿30')}
+      ${createKPICard(iconCost, 'Cost per Lead', '฿'+formatDec(gg.cpl), '#06B6D4', 'Cost per lead conversion', '฿200-฿800')}
     </div>
+    <div style="text-align: right; font-size: 11px; color: var(--muted); margin-bottom: 24px;">Benchmark ref: Google Ads Benchmark / WordStream (Thailand)</div>
   `;
 
   document.getElementById('kpiSection').innerHTML = html;
@@ -738,7 +770,7 @@ window.renderTopAdsMetrics = function() {
       <div class="top-metric-item"><div class="tm-label">CPC</div><div class="tm-val">฿${tClick>0?formatDec(tSpend/tClick):'0.00'}</div></div>
       <div class="top-metric-item"><div class="tm-label">CPL</div><div class="tm-val">฿${tLead>0?formatDec(tSpend/tLead):'0.00'}</div></div>`;
   } else {
-    container.innerHTML = `<div style="color:var(--muted); font-size:13px; padding:12px; grid-column:span 3;">ไม่พบข้อมูลแคมเปญ</div>`;
+    container.innerHTML = `<div style="color:var(--muted); font-size:13px; padding:12px; grid-column:span 3;"></div>`;
   }
 }
 
