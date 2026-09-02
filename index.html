@@ -224,13 +224,13 @@
       <div class="table-responsive">
         <table>
           <thead><tr>
-            <th>Keyword</th>
-            <th class="cost-cell">Spend (฿)</th>
-            <th class="num">Impr.</th>
-            <th class="num">Clicks</th>
-            <th class="num">CTR (%)</th>
-            <th class="num">Conv.</th>
-            <th class="num">CVR (%)</th>
+            <th class="sortable" onclick="window.handleSortKeyword('keyword')">Keyword <span class="sort-icon" id="sortIcon-kw-keyword"></span></th>
+            <th class="sortable cost-cell" onclick="window.handleSortKeyword('spend')">Cost (฿) <span class="sort-icon" id="sortIcon-kw-spend"></span></th>
+            <th class="sortable num" onclick="window.handleSortKeyword('impr')">Impr. <span class="sort-icon" id="sortIcon-kw-impr"></span></th>
+            <th class="sortable num" onclick="window.handleSortKeyword('clicks')">Clicks <span class="sort-icon" id="sortIcon-kw-clicks"></span></th>
+            <th class="sortable num" onclick="window.handleSortKeyword('ctr')">CTR (%) <span class="sort-icon" id="sortIcon-kw-ctr"></span></th>
+            <th class="sortable num" onclick="window.handleSortKeyword('conv')">Conv. <span class="sort-icon" id="sortIcon-kw-conv"></span></th>
+            <th class="sortable num" onclick="window.handleSortKeyword('cvr')">CVR (%) <span class="sort-icon" id="sortIcon-kw-cvr"></span></th>
           </tr></thead>
           <tbody id="keywordTableBody">
              <tr><td colspan="7" style="text-align:center; color:var(--muted);">ไม่พบข้อมูล Keyword ในระบบ</td></tr>
@@ -269,13 +269,13 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
           </button>
         </div>
-        <div class="chart-wrap" style="flex:1; align-items: stretch; background: transparent; border: none;">
+        <div class="chart-wrap" style="flex:1;">
            <!-- Text area for edit mode, overlapping metrics when editing -->
-           <textarea id="topAdNote2" class="editable-note" readonly placeholder="" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index: 10; display:none;"></textarea>
+           <textarea id="topAdNote2" class="editable-note" readonly placeholder="" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index: 10; display:none; background: var(--surface);"></textarea>
            
            <!-- Default metrics view -->
-           <div id="topAdMetricsWrapper" style="display:flex; flex-direction:column; width:100%; background:var(--surface); border:1px solid var(--border); border-radius:8px; overflow-y:auto;">
-             <div id="topAdMetricsContainer" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 12px; align-content: start;">
+           <div id="topAdMetricsWrapper" style="width:100%; height:100%; overflow-y:auto; padding: 12px;">
+             <div id="topAdMetricsContainer" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; align-content: start;">
                
              </div>
            </div>
@@ -304,10 +304,10 @@
               <th class="sortable" onclick="window.handleSort('impressions')">Impressions <span class="sort-icon" id="sortIcon-impressions"></span></th>
               <th class="sortable" onclick="window.handleSort('clicks')">Clicks <span class="sort-icon" id="sortIcon-clicks"></span></th>
               <th class="sortable" onclick="window.handleSort('leads')">Leads <span class="sort-icon" id="sortIcon-leads"></span></th>
-              <th class="sortable" onclick="window.handleSort('engagements')">Engagements <span class="sort-icon" id="sortIcon-engagements"></span></th>
-              <th class="sortable" onclick="window.handleSort('reactions')">Reactions <span class="sort-icon" id="sortIcon-reactions"></span></th>
-              <th class="sortable" onclick="window.handleSort('comments')">Comments <span class="sort-icon" id="sortIcon-comments"></span></th>
-              <th class="sortable" onclick="window.handleSort('shares')">Shares <span class="sort-icon" id="sortIcon-shares"></span></th>
+              <th class="sortable" onclick="window.handleSort('ctr')">CTR (%) <span class="sort-icon" id="sortIcon-ctr"></span></th>
+              <th class="sortable" onclick="window.handleSort('cpm')">CPM (฿) <span class="sort-icon" id="sortIcon-cpm"></span></th>
+              <th class="sortable" onclick="window.handleSort('cpc')">CPC (฿) <span class="sort-icon" id="sortIcon-cpc"></span></th>
+              <th class="sortable" onclick="window.handleSort('cpl')">CPL (฿) <span class="sort-icon" id="sortIcon-cpl"></span></th>
             </tr></thead>
             <tbody id="tableBody"></tbody>
           </table>
@@ -587,6 +587,13 @@ window.renderAll = function() {
   window.renderTable(); 
 }
 
+let currentSortKwCol = 'clicks', currentSortKwAsc = false;
+window.handleSortKeyword = function(col) {
+  if (currentSortKwCol === col) currentSortKwAsc = !currentSortKwAsc;
+  else { currentSortKwCol = col; currentSortKwAsc = col === 'keyword' ? true : false; }
+  window.renderKeywordTable();
+};
+
 const formatNum = (v) => v.toLocaleString();
 const formatDec = (v) => v.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
 
@@ -718,25 +725,38 @@ window.renderKeywordTable = function() {
     groupedObj[kw].conv += r.conversions;
   });
 
-  const top10 = Object.values(groupedObj).sort((a,b) => b.clicks - a.clicks).slice(0, 10);
+  let groupedData = Object.values(groupedObj).map(r => {
+    r.ctr = r.impr > 0 ? (r.clicks / r.impr) * 100 : 0;
+    r.cvr = r.clicks > 0 ? (r.conv / r.clicks) * 100 : 0;
+    return r;
+  });
+
+  groupedData.sort((a, b) => {
+    let vA = a[currentSortKwCol], vB = b[currentSortKwCol];
+    if (typeof vA === 'string') return currentSortKwAsc ? vA.localeCompare(vB) : vB.localeCompare(vA);
+    return currentSortKwAsc ? vA - vB : vB - vA;
+  });
+
+  ['keyword','spend','impr','clicks','ctr','conv','cvr'].forEach(c => {
+    const el = document.getElementById(`sortIcon-kw-${c}`);
+    if (el) el.innerHTML = c === currentSortKwCol ? (currentSortKwAsc ? '▲' : '▼') : '';
+  });
   
   const tbody = document.getElementById('keywordTableBody');
-  if (top10.length === 0) {
+  if (groupedData.length === 0) {
     tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; color:var(--muted);">ไม่พบข้อมูล Keyword ในระบบ</td></tr>';
     return;
   }
 
-  tbody.innerHTML = top10.map(r => {
-    const ctr = r.impr > 0 ? (r.clicks / r.impr) * 100 : 0;
-    const cvr = r.clicks > 0 ? (r.conv / r.clicks) * 100 : 0;
+  tbody.innerHTML = groupedData.map(r => {
     return `<tr>
       <td>${r.keyword}</td>
       <td class="cost-cell">฿${formatDec(r.spend)}</td>
       <td class="num">${formatNum(r.impr)}</td>
       <td class="num">${formatNum(r.clicks)}</td>
-      <td class="num text-blue">${formatDec(ctr)}%</td>
+      <td class="num text-blue">${formatDec(r.ctr)}%</td>
       <td class="num">${formatDec(r.conv)}</td>
-      <td class="num text-blue">${formatDec(cvr)}%</td>
+      <td class="num text-blue">${formatDec(r.cvr)}%</td>
     </tr>`;
   }).join('');
 }
@@ -784,21 +804,27 @@ window.handleSort = function(col) {
 window.renderTable = function() {
   const groupedObj = {};
   filteredData.forEach(r => {
-    if (!groupedObj[r.ad]) groupedObj[r.ad] = { ad: r.ad, platform: r.platform, spend: 0, reach: 0, impressions: 0, clicks: 0, leads: 0, engagements: 0, reactions: 0, comments: 0, shares: 0 };
+    if (!groupedObj[r.ad]) groupedObj[r.ad] = { ad: r.ad, platform: r.platform, spend: 0, reach: 0, impressions: 0, clicks: 0, leads: 0 };
     groupedObj[r.ad].spend += r.spend; groupedObj[r.ad].reach += r.reach; 
     groupedObj[r.ad].impressions += r.impressions; groupedObj[r.ad].clicks += r.clicks; 
-    groupedObj[r.ad].leads += r.leads; groupedObj[r.ad].engagements += r.engagements; 
-    groupedObj[r.ad].reactions += r.reactions; groupedObj[r.ad].comments += r.comments; 
-    groupedObj[r.ad].shares += r.shares;
+    groupedObj[r.ad].leads += r.leads;
   });
 
-  const groupedData = Object.values(groupedObj).sort((a, b) => {
+  let groupedData = Object.values(groupedObj).map(r => {
+    r.ctr = r.impressions > 0 ? (r.clicks / r.impressions) * 100 : 0;
+    r.cpm = r.impressions > 0 ? (r.spend / r.impressions) * 1000 : 0;
+    r.cpc = r.clicks > 0 ? (r.spend / r.clicks) : 0;
+    r.cpl = r.leads > 0 ? (r.spend / r.leads) : 0;
+    return r;
+  });
+
+  groupedData.sort((a, b) => {
     let vA = a[currentSortCol], vB = b[currentSortCol];
     if (typeof vA === 'string') return currentSortAsc ? vA.localeCompare(vB) : vB.localeCompare(vA);
     return currentSortAsc ? vA - vB : vB - vA;
   });
 
-  ['ad','platform','spend','reach','impressions','clicks','leads','engagements','reactions','comments','shares'].forEach(c => {
+  ['ad','platform','spend','reach','impressions','clicks','leads','ctr','cpm','cpc','cpl'].forEach(c => {
     const el = document.getElementById(`sortIcon-${c}`);
     if (el) el.innerHTML = c === currentSortCol ? (currentSortAsc ? '▲' : '▼') : '';
   });
@@ -809,15 +835,15 @@ window.renderTable = function() {
     return `<tr>
       <td title="${r.ad}" style="max-width:240px; overflow:hidden; text-overflow:ellipsis;"><span>${r.ad}</span></td>
       <td><span style="color:${pColor}; font-weight:600;">${r.platform}</span></td>
-      <td class="cost-cell">฿${r.spend.toFixed(2)}</td>
-      <td class="num">${r.reach.toLocaleString()}</td>
-      <td class="num">${r.impressions.toLocaleString()}</td>
-      <td class="num">${r.clicks.toLocaleString()}</td>
-      <td class="num">${r.leads.toLocaleString()}</td>
-      <td class="num">${r.engagements.toLocaleString()}</td>
-      <td class="num">${r.reactions.toLocaleString()}</td>
-      <td class="num">${r.comments.toLocaleString()}</td>
-      <td class="num">${r.shares.toLocaleString()}</td>
+      <td class="cost-cell">฿${formatDec(r.spend)}</td>
+      <td class="num">${formatNum(r.reach)}</td>
+      <td class="num">${formatNum(r.impressions)}</td>
+      <td class="num">${formatNum(r.clicks)}</td>
+      <td class="num">${formatNum(r.leads)}</td>
+      <td class="num text-blue">${formatDec(r.ctr)}%</td>
+      <td class="cost-cell">฿${formatDec(r.cpm)}</td>
+      <td class="cost-cell">฿${formatDec(r.cpc)}</td>
+      <td class="cost-cell">฿${formatDec(r.cpl)}</td>
     </tr>`;
   }).join('');
 }
