@@ -70,19 +70,19 @@
     .kpi-grid.row4 { grid-template-columns: repeat(4, 1fr); }
     .kpi-grid.row3 { grid-template-columns: repeat(3, 1fr); }
     
-    .kpi-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; box-shadow: var(--shadow-sm); display: grid; grid-template-areas: "label icon" "value icon" "sub sub"; grid-template-columns: 1fr auto; align-items: start; transition: transform .2s, box-shadow .2s; }
+    .kpi-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; box-shadow: var(--shadow-sm); display: grid; grid-template-areas: "label icon" "value icon" "sub sub" "bench bench"; grid-template-columns: 1fr auto; align-items: start; transition: transform .2s, box-shadow .2s; }
     .kpi-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
     .kpi-icon { grid-area: icon; width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
     .kpi-icon svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 1.75; }
     .kpi-label { grid-area: label; font-size: 13px; font-weight: 500; color: var(--text-secondary); margin-bottom: 4px; }
-    .kpi-value { grid-area: value; font-size: 24px; font-weight: 700; font-family: 'Inter',sans-serif; color: var(--text); line-height: 1.2; margin-bottom: 8px; }
+    .kpi-value { grid-area: value; font-size: 24px; font-weight: 700; font-family: 'Inter',sans-serif; color: var(--text); line-height: 1.2; margin-bottom: 4px; }
 
     .charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
     .chart-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; position: relative;}
     
     .chart-header-row { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; }
-    .chart-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
-    .chart-sub { font-size: 13px; color: var(--text-secondary); }
+    .chart-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .chart-sub { font-size: 13px; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     
     .chart-wrap { position: relative; height: 280px; width: 100%; display: flex; align-items: center; justify-content: center; background: var(--surface); border-radius: 8px; border: 1px solid var(--border); overflow: hidden; }
     
@@ -90,13 +90,13 @@
     .tm-label { font-size: 11px; color: var(--text-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
     .tm-val { font-size: 15px; font-weight: 700; color: var(--text); font-family: 'Inter', sans-serif; }
     
-    .edit-btn { background: transparent; border: none; cursor: pointer; color: var(--muted); border-radius: 6px; padding: 6px; transition: all 0.2s; display: flex; align-items: center; justify-content: center; }
+    .edit-btn { background: transparent; border: none; cursor: pointer; color: var(--muted); border-radius: 6px; padding: 6px; transition: all 0.2s; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .edit-btn:hover { background: var(--surface); color: var(--primary); }
     
-    .editable-title { border: 1px dashed transparent; padding: 2px 4px; margin: -2px -4px; border-radius: 4px; width: 100%; }
-    .editable-title.editing { border-color: var(--primary); background: var(--surface); outline: none; }
+    .editable-title { border: 1px dashed transparent; padding: 2px 4px; margin: -2px -4px; border-radius: 4px; width: 100%; display: block; }
+    .editable-title.editing { border-color: var(--primary); background: var(--surface); outline: none; white-space: normal; overflow: visible; }
     .editable-note { width: 100%; min-height: 280px; resize: none; border: 1px dashed transparent; background: transparent; color: var(--text); font-family: 'Inter','Noto Sans Thai',sans-serif; font-size: 13px; padding: 12px; line-height: 1.5; border-radius: 8px; }
-    .editable-note.editing { border-color: var(--primary); background: var(--surface); outline: none; border-style: solid; }
+    .editable-note.editing { border-color: var(--primary); background: var(--surface); outline: none; border-style: solid; z-index: 20; position: relative;}
 
     .table-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 0; box-shadow: var(--shadow-sm); margin-top: 24px; overflow: visible; }
     
@@ -227,7 +227,7 @@
         <table>
           <thead><tr>
             <th class="sortable" onclick="window.handleSortKeyword('keyword')">Keyword <span class="sort-icon" id="sortIcon-kw-keyword"></span></th>
-            <th class="sortable cost-cell" onclick="window.handleSortKeyword('spend')">Cost (฿) <span class="sort-icon" id="sortIcon-kw-spend"></span></th>
+            <th class="sortable cost-cell" onclick="window.handleSortKeyword('spend')">Spend (฿) <span class="sort-icon" id="sortIcon-kw-spend"></span></th>
             <th class="sortable num" onclick="window.handleSortKeyword('impr')">Impr. <span class="sort-icon" id="sortIcon-kw-impr"></span></th>
             <th class="sortable num" onclick="window.handleSortKeyword('clicks')">Clicks <span class="sort-icon" id="sortIcon-kw-clicks"></span></th>
             <th class="sortable num" onclick="window.handleSortKeyword('ctr')">CTR (%) <span class="sort-icon" id="sortIcon-kw-ctr"></span></th>
@@ -261,7 +261,7 @@
       <!-- Top Ad Creative Box -->
       <div class="chart-card">
         <div class="chart-header-row">
-          <div>
+          <div style="flex: 1; min-width: 0; padding-right: 12px;">
             <div id="topAdTitle1" class="chart-title editable-title">Top Ad Creative</div>
             <div id="topAdSub1" class="chart-sub editable-title">ชิ้นงานโฆษณาที่ทำผลงานได้ดีที่สุด</div>
           </div>
@@ -270,14 +270,20 @@
           </button>
         </div>
         <div class="chart-wrap" style="flex:1;">
-           <textarea id="topAdNote1" class="editable-note" readonly placeholder=""></textarea>
+           <!-- Text area for edit mode, hidden by default -->
+           <textarea id="topAdNote1" class="editable-note" readonly placeholder="" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index: 10; display:none;"></textarea>
+           
+           <!-- Default content view -->
+           <div id="topAdContentWrapper1" style="width:100%; height: 100%; overflow-y:auto; padding: 12px; display: grid; gap: 10px; align-content: start;">
+             
+           </div>
         </div>
       </div>
 
       <!-- Top Ads Performance Box -->
       <div class="chart-card">
         <div class="chart-header-row">
-          <div>
+          <div style="flex: 1; min-width: 0; padding-right: 12px;">
             <div id="topAdTitle2" class="chart-title editable-title">Top Ads Performance</div>
             <div id="topAdSub2" class="chart-sub editable-title">สถิติของชิ้นงานโฆษณาที่ทำผลงานได้ดีที่สุด</div>
           </div>
@@ -285,11 +291,13 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
           </button>
         </div>
-        <div class="chart-wrap" style="flex:1; align-items: stretch; background: transparent; border: none;">
+        <div class="chart-wrap" style="flex:1;">
+           <!-- Text area for edit mode, hidden by default -->
            <textarea id="topAdNote2" class="editable-note" readonly placeholder="" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index: 10; display:none;"></textarea>
            
-           <div id="topAdMetricsWrapper" style="display:flex; flex-direction:column; width:100%; background:var(--surface); border:1px solid var(--border); border-radius:8px; overflow-y:auto;">
-             <div id="topAdMetricsContainer" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 12px; align-content: start;">
+           <!-- Default metrics view -->
+           <div id="topAdContentWrapper2" style="width:100%; height: 100%; overflow-y:auto; padding: 12px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; align-content: start;">
+             <div id="topAdMetricsContainer" style="display: contents;">
                
              </div>
            </div>
@@ -313,15 +321,15 @@
             <thead><tr>
               <th class="sortable" onclick="window.handleSort('ad')">Ad Name <span class="sort-icon" id="sortIcon-ad"></span></th>
               <th class="sortable" onclick="window.handleSort('platform')">Platform <span class="sort-icon" id="sortIcon-platform"></span></th>
-              <th class="sortable" onclick="window.handleSort('spend')">Spend (฿) <span class="sort-icon" id="sortIcon-spend"></span></th>
-              <th class="sortable" onclick="window.handleSort('reach')">Reach <span class="sort-icon" id="sortIcon-reach"></span></th>
-              <th class="sortable" onclick="window.handleSort('impressions')">Impressions <span class="sort-icon" id="sortIcon-impressions"></span></th>
-              <th class="sortable" onclick="window.handleSort('clicks')">Clicks <span class="sort-icon" id="sortIcon-clicks"></span></th>
-              <th class="sortable" onclick="window.handleSort('leads')">Leads <span class="sort-icon" id="sortIcon-leads"></span></th>
-              <th class="sortable" onclick="window.handleSort('cpm')">CPM (฿) <span class="sort-icon" id="sortIcon-cpm"></span></th>
-              <th class="sortable" onclick="window.handleSort('cpc')">CPC (฿) <span class="sort-icon" id="sortIcon-cpc"></span></th>
-              <th class="sortable" onclick="window.handleSort('cpl')">CPL (฿) <span class="sort-icon" id="sortIcon-cpl"></span></th>
-              <th class="sortable" onclick="window.handleSort('ctr')">CTR (%) <span class="sort-icon" id="sortIcon-ctr"></span></th>
+              <th class="sortable cost-cell" onclick="window.handleSort('spend')">Spend (฿) <span class="sort-icon" id="sortIcon-spend"></span></th>
+              <th class="sortable num" onclick="window.handleSort('reach')">Reach <span class="sort-icon" id="sortIcon-reach"></span></th>
+              <th class="sortable num" onclick="window.handleSort('impressions')">Impressions <span class="sort-icon" id="sortIcon-impressions"></span></th>
+              <th class="sortable num" onclick="window.handleSort('clicks')">Clicks <span class="sort-icon" id="sortIcon-clicks"></span></th>
+              <th class="sortable num" onclick="window.handleSort('leads')">Leads <span class="sort-icon" id="sortIcon-leads"></span></th>
+              <th class="sortable cost-cell" onclick="window.handleSort('cpm')">CPM (฿) <span class="sort-icon" id="sortIcon-cpm"></span></th>
+              <th class="sortable cost-cell" onclick="window.handleSort('cpc')">CPC (฿) <span class="sort-icon" id="sortIcon-cpc"></span></th>
+              <th class="sortable cost-cell" onclick="window.handleSort('cpl')">CPL (฿) <span class="sort-icon" id="sortIcon-cpl"></span></th>
+              <th class="sortable num" onclick="window.handleSort('ctr')">CTR (%) <span class="sort-icon" id="sortIcon-ctr"></span></th>
             </tr></thead>
             <tbody id="tableBody"></tbody>
           </table>
@@ -389,7 +397,7 @@ window.toggleEdit = function(boxId) {
   const subEl = document.getElementById(`topAdSub${i}`);
   const noteEl = document.getElementById(`topAdNote${i}`);
   const btnEl = document.getElementById(`editBtn${i}`);
-  const metricsWrapper = document.getElementById('topAdMetricsWrapper');
+  const contentWrapper = document.getElementById(`topAdContentWrapper${i}`);
   
   if (isEditing) {
     titleEl.contentEditable = "true"; titleEl.classList.add('editing');
@@ -397,10 +405,8 @@ window.toggleEdit = function(boxId) {
     noteEl.removeAttribute('readonly'); noteEl.classList.add('editing');
     btnEl.innerHTML = editIcons.save; btnEl.style.color = 'var(--primary)';
     
-    if (i === '2') {
-      noteEl.style.display = 'block';
-      if (metricsWrapper) metricsWrapper.style.opacity = '0';
-    }
+    noteEl.style.display = 'block';
+    if (contentWrapper) contentWrapper.style.opacity = '0';
   } else {
     titleEl.contentEditable = "false"; titleEl.classList.remove('editing');
     subEl.contentEditable = "false"; subEl.classList.remove('editing');
@@ -411,13 +417,11 @@ window.toggleEdit = function(boxId) {
     localStorage.setItem(`topAdSub${i}`, subEl.textContent);
     localStorage.setItem(`topAdNote${i}`, noteEl.value);
 
-    if (i === '2') {
-      if (!noteEl.value.trim()) {
-        noteEl.style.display = 'none';
-        if (metricsWrapper) metricsWrapper.style.opacity = '1';
-      } else {
-        if (metricsWrapper) metricsWrapper.style.opacity = '0';
-      }
+    if (!noteEl.value.trim()) {
+      noteEl.style.display = 'none';
+      if (contentWrapper) contentWrapper.style.opacity = '1';
+    } else {
+      if (contentWrapper) contentWrapper.style.opacity = '0';
     }
     window.showStatus('✅ บันทึกข้อความเรียบร้อย');
   }
@@ -432,12 +436,14 @@ window.onload = function() {
   
   loadSavedNotes();
   
-  const note2 = document.getElementById('topAdNote2');
-  const metricsWrapper = document.getElementById('topAdMetricsWrapper');
-  if (note2 && note2.value.trim()) {
-    note2.style.display = 'block';
-    if(metricsWrapper) metricsWrapper.style.opacity = '0';
-  }
+  ['1', '2'].forEach(i => {
+    const note = document.getElementById(`topAdNote${i}`);
+    const wrapper = document.getElementById(`topAdContentWrapper${i}`);
+    if (note && note.value.trim()) {
+      note.style.display = 'block';
+      if (wrapper) wrapper.style.opacity = '0';
+    }
+  });
   
   window.autoLoadAllMonths();
 };
@@ -469,10 +475,13 @@ window.fetchMissingYear = async function(year) {
           let res = await fetch(`${path}.csv`);
           if (res.ok) {
               let text = await res.text();
+              
+              // Skip the first 2 lines for Google Ads report formats automatically
               if (text.startsWith("Campaign report") || text.startsWith("Search keyword report")) {
                   const lines = text.split('\n');
                   text = lines.slice(2).join('\n');
               }
+              
               Papa.parse(text, { header: true, skipEmptyLines: true, complete: r => {
                   const mapped = r.data.map(row => ({...row, platform: platform, inferredMonth: monthName}));
                   if (isKeyword) kwTemp = kwTemp.concat(mapped);
@@ -485,11 +494,14 @@ window.fetchMissingYear = async function(year) {
               const arrayBuffer = await res.arrayBuffer();
               const wb = XLSX.read(arrayBuffer, { type: 'array' });
               const ws = wb.Sheets[wb.SheetNames[0]];
+              
+              // Skip first 2 rows if Google format
               let skipRows = 0;
               let firstCell = ws['A1'] ? ws['A1'].v.toString() : '';
               if (firstCell.includes('Campaign report') || firstCell.includes('Search keyword report')) {
                   skipRows = 2;
               }
+              
               const mapped = XLSX.utils.sheet_to_json(ws, { defval: 0, range: skipRows }).map(row => ({...row, platform: platform, inferredMonth: monthName}));
               if (isKeyword) kwTemp = kwTemp.concat(mapped);
               else temp = temp.concat(mapped);
@@ -500,14 +512,18 @@ window.fetchMissingYear = async function(year) {
   };
 
   for (let month of months) {
+      // 1. Facebook Ads
       let fb = await processFile(`./data/facebook/${year}-${month}-TTM-FB`, 'Facebook', month);
+      // 2. Google Ads
       let gg = await processFile(`./data/google/${year}-${month}-TTM-GG`, 'Google', month);
+      // 3. Google Keyword
       let kw = await processFile(`./data/google/keyword/${year}-${month}-TTM-KW`, 'Google', month, true);
 
       if (fb || gg || kw) foundAny = true;
   }
   
   if (foundAny) {
+      // Helper function to remove commas from string numbers before parsing
       const parseNum = (val) => parseInt((val||'0').toString().replace(/,/g, '')) || 0;
       const parseDec = (val) => parseFloat((val||'0').toString().replace(/,/g, '')) || 0;
 
@@ -515,13 +531,16 @@ window.fetchMissingYear = async function(year) {
         return {
           platform: r.platform,
           campaign: r['Campaign name']||r['campaign']||r['Campaign']||'', 
+          // Use Campaign name if Ad name is missing (like in Google campaign level reports)
           ad: r['Ad name']||r['ad']||r['Ad group']||r['Campaign name']||r['Campaign']||'Unknown', 
           month: r['Month'] || r['month'] || r.inferredMonth || 'Total',
           year: year,
           spend: parseDec(r['Amount spent (THB)']||r['spend']||r['Cost']),
           reach: parseNum(r['Reach']), 
           impressions: parseNum(r['Impressions']||r['Impr.']),
+          // Support various click column names
           clicks: parseNum(r['Clicks']||r['Link clicks']||r['Clicks (all)']),
+          // Support various lead column names
           leads: parseNum(r['Leads'] || r['leads'] || r['Results'] || r['Conversions'] || r['Submit lead form'])
         };
       }).filter(r => r.campaign && r.campaign !== '-'); 
@@ -592,21 +611,22 @@ window.renderAll = function() {
 const formatNum = (v) => v.toLocaleString();
 const formatDec = (v) => v.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
 
-function createKPICard(icon, label, value, color, benchmark = '', source = '') {
+function createKPICardWithBench(icon, label, subtitle, value, color, benchmark = '') {
     let benchHtml = '';
     if (benchmark) {
         benchHtml = `
-        <div style="grid-column: 1 / -1; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-end;">
-          <div style="font-size: 11px; color: var(--text-secondary);">Benchmark</div>
+        <div style="grid-column: 1 / -1; padding-top: 12px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-end;">
+          <div style="font-size: 12px; color: var(--text-secondary);">Benchmark</div>
           <div style="font-size: 13px; font-weight: 600; color: var(--text);">${benchmark}</div>
         </div>`;
     }
+    
     return `<div class="kpi-card" style="padding:16px;">
       <div class="kpi-label">${label}</div>
       <div class="kpi-icon" style="color:${color};background:color-mix(in srgb,${color} 12%,transparent);">${icon}</div>
       <div class="kpi-value">${value}</div>
+      ${subtitle ? `<div class="kpi-sub" style="grid-column: 1/-1; font-size:12px; color:var(--muted); margin-top:-4px; margin-bottom:12px;">${subtitle}</div>` : ''}
       ${benchHtml}
-      ${source ? `<div style="grid-column: 1 / -1; font-size: 9px; color: var(--muted); text-align: right; margin-top: 4px;">Ref: ${source}</div>` : ''}
       </div>`;
 }
 
@@ -645,61 +665,67 @@ window.renderKPIs = function() {
 
   let html = '';
 
+  // 1. Overview
   html += `
     <div class="kpi-section-title">Overview</div>
     <div class="kpi-group-label">Performance</div>
     <div class="kpi-grid row3">
-      ${createKPICard(iconSpend, 'Total Spend', '฿'+formatDec(o.spend), 'var(--primary)')}
-      ${createKPICard(iconReach, 'Reach', formatNum(o.reach), 'var(--green)')}
-      ${createKPICard(iconImpr, 'Impressions', formatNum(o.impr), 'var(--blue)')}
-      ${createKPICard(iconClick, 'Clicks', formatNum(o.clicks), 'var(--accent)')}
-      ${createKPICard(iconLead, 'Leads', formatNum(o.leads), '#06B6D4')}
-      ${createKPICard(iconFreq, 'Frequency', o.freq.toFixed(2), '#8B5CF6')}
+      ${createKPICardWithBench(iconSpend, 'Total Spend', '', '฿'+formatDec(o.spend), 'var(--primary)')}
+      ${createKPICardWithBench(iconReach, 'Reach', '', formatNum(o.reach), 'var(--green)')}
+      ${createKPICardWithBench(iconImpr, 'Impressions', '', formatNum(o.impr), 'var(--blue)')}
+      ${createKPICardWithBench(iconClick, 'Clicks', '', formatNum(o.clicks), 'var(--accent)')}
+      ${createKPICardWithBench(iconLead, 'Leads', '', formatNum(o.leads), '#06B6D4')}
+      ${createKPICardWithBench(iconFreq, 'Frequency', '', o.freq.toFixed(2), '#8B5CF6')}
     </div>
     <div class="kpi-group-label">Cost Efficiency</div>
     <div class="kpi-grid row4">
-      ${createKPICard(iconCost, 'Cost per 1,000 Reach', '฿'+formatDec(o.cpr), 'var(--green)', '฿80 - ฿150', 'DataReportal (TH)')}
-      ${createKPICard(iconCost, 'CPM', '฿'+formatDec(o.cpm), 'var(--primary)', '฿50 - ฿150', 'DataReportal (TH)')}
-      ${createKPICard(iconCost, 'CPC', '฿'+formatDec(o.cpc), 'var(--accent)', '฿5 - ฿25', 'WordStream (TH)')}
-      ${createKPICard(iconCost, 'Cost per Lead', '฿'+formatDec(o.cpl), '#06B6D4', '฿150 - ฿500', 'Industry Avg.')}
+      ${createKPICardWithBench(iconCost, 'Cost per 1,000 Reach (CPR)', 'Cost per 1,000 reach', '฿'+formatDec(o.cpr), 'var(--green)', '฿80-฿150')}
+      ${createKPICardWithBench(iconCost, 'CPM', 'Cost per 1,000 impressions', '฿'+formatDec(o.cpm), 'var(--primary)', '฿50-฿150')}
+      ${createKPICardWithBench(iconCost, 'CPC', 'Cost per click', '฿'+formatDec(o.cpc), 'var(--accent)', '฿5-฿25')}
+      ${createKPICardWithBench(iconCost, 'Cost per Lead (CPL)', 'Cost per submitted lead form', '฿'+formatDec(o.cpl), '#06B6D4', '฿150-฿500')}
     </div>
+    <div style="text-align: right; font-size: 11px; color: var(--muted); margin-top: -8px; margin-bottom: 24px;">Benchmark ref: Industry Average (Thailand)</div>
   `;
 
+  // 2. Facebook
   html += `
-    <div class="kpi-section-title" style="color:#1877F2; margin-top:32px;">Facebook Ads Performance</div>
+    <div class="kpi-section-title" style="color:#1877F2;">Facebook Ads Performance</div>
     <div class="kpi-group-label">Performance</div>
     <div class="kpi-grid row3">
-      ${createKPICard(iconSpend, 'Total Spend', '฿'+formatDec(fb.spend), '#1877F2')}
-      ${createKPICard(iconReach, 'Reach', formatNum(fb.reach), 'var(--green)')}
-      ${createKPICard(iconImpr, 'Impressions', formatNum(fb.impr), 'var(--blue)')}
-      ${createKPICard(iconClick, 'Clicks', formatNum(fb.clicks), 'var(--accent)')}
-      ${createKPICard(iconLead, 'Leads', formatNum(fb.leads), '#06B6D4')}
-      ${createKPICard(iconFreq, 'Frequency', fb.freq.toFixed(2), '#8B5CF6')}
+      ${createKPICardWithBench(iconSpend, 'Total Spend', '', '฿'+formatDec(fb.spend), '#1877F2')}
+      ${createKPICardWithBench(iconReach, 'Reach', '', formatNum(fb.reach), 'var(--green)')}
+      ${createKPICardWithBench(iconImpr, 'Impressions', '', formatNum(fb.impr), 'var(--blue)')}
+      ${createKPICardWithBench(iconClick, 'Clicks', '', formatNum(fb.clicks), 'var(--accent)')}
+      ${createKPICardWithBench(iconLead, 'Leads', '', formatNum(fb.leads), '#06B6D4')}
+      ${createKPICardWithBench(iconFreq, 'Frequency', '', fb.freq.toFixed(2), '#8B5CF6')}
     </div>
     <div class="kpi-group-label">Cost Efficiency</div>
     <div class="kpi-grid row4">
-      ${createKPICard(iconCost, 'Cost per 1,000 Reach', '฿'+formatDec(fb.cpr), 'var(--green)', '฿80 - ฿150', 'Meta Benchmark (TH)')}
-      ${createKPICard(iconCost, 'CPM', '฿'+formatDec(fb.cpm), '#1877F2', '฿50 - ฿120', 'Meta Benchmark (TH)')}
-      ${createKPICard(iconCost, 'CPC', '฿'+formatDec(fb.cpc), 'var(--accent)', '฿3 - ฿15', 'WordStream (TH)')}
-      ${createKPICard(iconCost, 'Cost per Lead', '฿'+formatDec(fb.cpl), '#06B6D4', '฿100 - ฿400', 'Industry Avg.')}
+      ${createKPICardWithBench(iconCost, 'Cost per 1,000 Reach (CPR)', 'Cost per 1,000 reach', '฿'+formatDec(fb.cpr), 'var(--green)', '฿80-฿150')}
+      ${createKPICardWithBench(iconCost, 'CPM', 'Cost per 1,000 impressions', '฿'+formatDec(fb.cpm), '#1877F2', '฿50-฿120')}
+      ${createKPICardWithBench(iconCost, 'CPC', 'Cost per link click', '฿'+formatDec(fb.cpc), 'var(--accent)', '฿3-฿15')}
+      ${createKPICardWithBench(iconCost, 'Cost per Lead (CPL)', 'Cost per submitted lead form', '฿'+formatDec(fb.cpl), '#06B6D4', '฿100-฿400')}
     </div>
+    <div style="text-align: right; font-size: 11px; color: var(--muted); margin-top: -8px; margin-bottom: 24px;">Benchmark ref: Meta Business Suite / Wordstream Facebook Ads 2025 (Thailand)</div>
   `;
 
+  // 3. Google
   html += `
-    <div class="kpi-section-title" style="color:#EA4335; margin-top:32px;">Google Ads Performance</div>
+    <div class="kpi-section-title" style="color:#EA4335;">Google Ads Performance</div>
     <div class="kpi-group-label">Performance</div>
-    <div class="kpi-grid row3">
-      ${createKPICard(iconSpend, 'Total Spend', '฿'+formatDec(gg.spend), '#EA4335')}
-      ${createKPICard(iconImpr, 'Impressions', formatNum(gg.impr), 'var(--blue)')}
-      ${createKPICard(iconClick, 'Clicks', formatNum(gg.clicks), 'var(--accent)')}
-      ${createKPICard(iconLead, 'Leads', formatNum(gg.leads), '#06B6D4')}
+    <div class="kpi-grid row4">
+      ${createKPICardWithBench(iconSpend, 'Total Spend', '', '฿'+formatDec(gg.spend), '#EA4335')}
+      ${createKPICardWithBench(iconImpr, 'Impressions', '', formatNum(gg.impr), 'var(--blue)')}
+      ${createKPICardWithBench(iconClick, 'Clicks', '', formatNum(gg.clicks), 'var(--accent)')}
+      ${createKPICardWithBench(iconLead, 'Leads', '', formatNum(gg.leads), '#06B6D4')}
     </div>
     <div class="kpi-group-label">Cost Efficiency</div>
     <div class="kpi-grid row3">
-      ${createKPICard(iconCost, 'CPM', '฿'+formatDec(gg.cpm), '#EA4335', '฿80 - ฿200', 'Google Ads Benchmark')}
-      ${createKPICard(iconCost, 'CPC', '฿'+formatDec(gg.cpc), 'var(--accent)', '฿10 - ฿30', 'WordStream (TH)')}
-      ${createKPICard(iconCost, 'Cost per Lead', '฿'+formatDec(gg.cpl), '#06B6D4', '฿200 - ฿800', 'Industry Avg.')}
+      ${createKPICardWithBench(iconCost, 'CPM', 'Cost per 1,000 impressions', '฿'+formatDec(gg.cpm), '#EA4335', '฿80-฿200')}
+      ${createKPICardWithBench(iconCost, 'CPC', 'Cost per click', '฿'+formatDec(gg.cpc), 'var(--accent)', '฿10-฿30')}
+      ${createKPICardWithBench(iconCost, 'Cost per Lead (CPL)', 'Cost per conversion', '฿'+formatDec(gg.cpl), '#06B6D4', '฿200-฿800')}
     </div>
+    <div style="text-align: right; font-size: 11px; color: var(--muted); margin-top: -8px; margin-bottom: 24px;">Benchmark ref: Google Ads Industry Benchmark (Thailand)</div>
   `;
 
   document.getElementById('kpiSection').innerHTML = html;
@@ -793,6 +819,7 @@ window.renderTopAdsMetrics = function() {
       <div class="top-metric-item"><div class="tm-label">CPC</div><div class="tm-val">฿${tClick>0?formatDec(tSpend/tClick):'0.00'}</div></div>
       <div class="top-metric-item"><div class="tm-label">CPL</div><div class="tm-val">฿${tLead>0?formatDec(tSpend/tLead):'0.00'}</div></div>`;
   } else {
+    // Show completely blank if no campaign
     container.innerHTML = ``;
   }
 }
