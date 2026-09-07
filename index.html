@@ -77,8 +77,9 @@
     .kpi-label { grid-area: label; font-size: 13px; font-weight: 500; color: var(--text-secondary); margin-bottom: 4px; }
     .kpi-value { grid-area: value; font-size: 24px; font-weight: 700; font-family: 'Inter',sans-serif; color: var(--text); line-height: 1.2; margin-bottom: 4px; }
 
-    .charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
-    .chart-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; position: relative;}
+    /* 50/50 Layout for Top Ads */
+    .charts-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 24px; width: 100%; }
+    .chart-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; position: relative; min-width: 0; }
     
     .chart-header-row { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; }
     .chart-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -90,13 +91,7 @@
     .tm-label { font-size: 11px; color: var(--text-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
     .tm-val { font-size: 15px; font-weight: 700; color: var(--text); font-family: 'Inter', sans-serif; }
     
-    .edit-btn { background: transparent; border: none; cursor: pointer; color: var(--muted); border-radius: 6px; padding: 6px; transition: all 0.2s; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .edit-btn:hover { background: var(--surface); color: var(--primary); }
-    
-    .editable-title { border: 1px dashed transparent; padding: 2px 4px; margin: -2px -4px; border-radius: 4px; width: 100%; display: block; }
-    .editable-title.editing { border-color: var(--primary); background: var(--surface); outline: none; white-space: normal; overflow: visible; }
-    .editable-note { width: 100%; min-height: 280px; resize: none; border: 1px dashed transparent; background: transparent; color: var(--text); font-family: 'Inter','Noto Sans Thai',sans-serif; font-size: 13px; padding: 12px; line-height: 1.5; border-radius: 8px; }
-    .editable-note.editing { border-color: var(--primary); background: var(--surface); outline: none; border-style: solid; z-index: 20; position: relative;}
+    .editable-note { width: 100%; min-height: 280px; resize: none; border: none; background: transparent; color: var(--text); font-family: 'Inter','Noto Sans Thai',sans-serif; font-size: 14px; padding: 12px; line-height: 1.6; border-radius: 8px; }
 
     .table-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 0; box-shadow: var(--shadow-sm); margin-top: 24px; overflow: visible; }
     
@@ -212,7 +207,7 @@
   <div style="padding: 0 32px; margin-top: -8px;" id="innerMain">
     <div id="statusBar"></div>
     
-    <!-- KPI Section (Dynamically rendered) -->
+    <!-- KPI Section (Dynamically rendered with Overview, Facebook, Google) -->
     <div id="kpiSection"></div>
 
     <!-- Keyword Performance Table -->
@@ -255,28 +250,20 @@
       </div>
     </div>
 
-    <!-- Top Ads Section -->
+    <!-- Top Ads Section (50/50 Layout - Auto loading from CSV/XLSX) -->
     <div class="charts-grid" style="margin-top: 24px;">
       
       <!-- Top Ad Creative Box -->
       <div class="chart-card">
         <div class="chart-header-row">
           <div style="flex: 1; min-width: 0; padding-right: 12px;">
-            <div id="topAdTitle1" class="chart-title editable-title">Top Ad Creative</div>
-            <div id="topAdSub1" class="chart-sub editable-title">ชิ้นงานโฆษณาที่ทำผลงานได้ดีที่สุด</div>
+            <div id="topAdTitle1" class="chart-title">Top Ad Creative</div>
+            <div id="topAdSub1" class="chart-sub">ชิ้นงานโฆษณาที่ทำผลงานได้ดีที่สุด</div>
           </div>
-          <button class="edit-btn" onclick="toggleEdit('box1')" id="editBtn1" title="แก้ไข">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
-          </button>
         </div>
         <div class="chart-wrap" style="flex:1;">
-           <!-- Text area for edit mode, hidden by default -->
-           <textarea id="topAdNote1" class="editable-note" readonly placeholder="" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index: 10; display:none;"></textarea>
-           
-           <!-- Default content view -->
-           <div id="topAdContentWrapper1" style="width:100%; height: 100%; overflow-y:auto; padding: 12px; display: grid; gap: 10px; align-content: start;">
-             
-           </div>
+           <textarea id="topAdNote1" class="editable-note" readonly style="position:absolute; top:0; left:0; width:100%; height:100%; z-index: 10; display:none;"></textarea>
+           <div id="topAdContentWrapper1" style="width:100%; height: 100%; overflow-y:auto; padding: 12px; display: grid; gap: 10px; align-content: start;"></div>
         </div>
       </div>
 
@@ -284,22 +271,14 @@
       <div class="chart-card">
         <div class="chart-header-row">
           <div style="flex: 1; min-width: 0; padding-right: 12px;">
-            <div id="topAdTitle2" class="chart-title editable-title">Top Ads Performance</div>
-            <div id="topAdSub2" class="chart-sub editable-title">สถิติของชิ้นงานโฆษณาที่ทำผลงานได้ดีที่สุด</div>
+            <div id="topAdTitle2" class="chart-title">Top Ads Performance</div>
+            <div id="topAdSub2" class="chart-sub">สถิติของชิ้นงานโฆษณาที่ทำผลงานได้ดีที่สุด</div>
           </div>
-          <button class="edit-btn" onclick="toggleEdit('box2')" id="editBtn2" title="แก้ไข">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
-          </button>
         </div>
         <div class="chart-wrap" style="flex:1;">
-           <!-- Text area for edit mode, hidden by default -->
-           <textarea id="topAdNote2" class="editable-note" readonly placeholder="" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index: 10; display:none;"></textarea>
-           
-           <!-- Default metrics view -->
+           <textarea id="topAdNote2" class="editable-note" readonly style="position:absolute; top:0; left:0; width:100%; height:100%; z-index: 10; display:none;"></textarea>
            <div id="topAdContentWrapper2" style="width:100%; height: 100%; overflow-y:auto; padding: 12px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; align-content: start;">
-             <div id="topAdMetricsContainer" style="display: contents;">
-               
-             </div>
+             <div id="topAdMetricsContainer" style="display: contents;"></div>
            </div>
         </div>
       </div>
@@ -369,62 +348,113 @@ let allData = [];
 let keywordData = [];
 let filteredData = []; 
 let filteredKeywordData = [];
+let suggestionData = []; // Support for loading suggestions from files
 
-// Edit Mode Logic for Custom Notes
-let editModes = { box1: false, box2: false };
-const editIcons = {
-  edit: '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>',
-  save: '💾'
-};
-
-function loadSavedNotes() {
-  ['1','2'].forEach(i => {
-    const savedTitle = localStorage.getItem(`topAdTitle${i}`);
-    const savedSub = localStorage.getItem(`topAdSub${i}`);
-    const savedNote = localStorage.getItem(`topAdNote${i}`);
-    if (savedTitle) document.getElementById(`topAdTitle${i}`).textContent = savedTitle;
-    if (savedSub) document.getElementById(`topAdSub${i}`).textContent = savedSub;
-    if (savedNote) document.getElementById(`topAdNote${i}`).value = savedNote;
-  });
+// Safe fetch equivalent handling CORS errors
+async function safeFetch(url) {
+  try {
+    if (window.location.protocol.startsWith('blob') || window.location.protocol === 'data:') return null;
+    const res = await fetch(url);
+    if (!res.ok) return null;
+    return res;
+  } catch (e) {
+    return null;
+  }
 }
 
-window.toggleEdit = function(boxId) {
-  const i = boxId === 'box1' ? '1' : '2';
-  const isEditing = !editModes[boxId];
-  editModes[boxId] = isEditing;
-  
-  const titleEl = document.getElementById(`topAdTitle${i}`);
-  const subEl = document.getElementById(`topAdSub${i}`);
-  const noteEl = document.getElementById(`topAdNote${i}`);
-  const btnEl = document.getElementById(`editBtn${i}`);
-  const contentWrapper = document.getElementById(`topAdContentWrapper${i}`);
-  
-  if (isEditing) {
-    titleEl.contentEditable = "true"; titleEl.classList.add('editing');
-    subEl.contentEditable = "true"; subEl.classList.add('editing');
-    noteEl.removeAttribute('readonly'); noteEl.classList.add('editing');
-    btnEl.innerHTML = editIcons.save; btnEl.style.color = 'var(--primary)';
-    
-    noteEl.style.display = 'block';
-    if (contentWrapper) contentWrapper.style.opacity = '0';
-  } else {
-    titleEl.contentEditable = "false"; titleEl.classList.remove('editing');
-    subEl.contentEditable = "false"; subEl.classList.remove('editing');
-    noteEl.setAttribute('readonly', 'true'); noteEl.classList.remove('editing');
-    btnEl.innerHTML = editIcons.edit; btnEl.style.color = 'var(--muted)';
-    
-    localStorage.setItem(`topAdTitle${i}`, titleEl.textContent);
-    localStorage.setItem(`topAdSub${i}`, subEl.textContent);
-    localStorage.setItem(`topAdNote${i}`, noteEl.value);
-
-    if (!noteEl.value.trim()) {
-      noteEl.style.display = 'none';
-      if (contentWrapper) contentWrapper.style.opacity = '1';
-    } else {
-      if (contentWrapper) contentWrapper.style.opacity = '0';
+// Logic to load suggestions specifically for Top Ads modules
+window.loadSuggestions = async function() {
+  try {
+    let res = await safeFetch('./data/suggestion.csv');
+    if (res) {
+      const text = await res.text();
+      Papa.parse(text, {
+        header: true,
+        skipEmptyLines: true,
+        complete: function(results) {
+          suggestionData = results.data.map(row => ({
+            box_id: row.box_id ? row.box_id.toString() : '',
+            month: row.month || 'Total',
+            title: row.title || '',
+            subtitle: row.subtitle || '',
+            note: row.note || ''
+          }));
+          window.applySuggestions(); 
+        }
+      });
+      return; 
     }
-    window.showStatus('✅ บันทึกข้อความเรียบร้อย');
+
+    res = await safeFetch('./data/suggestion.xlsx');
+    if (res) {
+      const arrayBuffer = await res.arrayBuffer();
+      const wb = XLSX.read(arrayBuffer, { type: 'array' });
+      const ws = wb.Sheets[wb.SheetNames[0]]; 
+      const json = XLSX.utils.sheet_to_json(ws, { defval: '' });
+      
+      suggestionData = json.map(row => ({
+        box_id: row.box_id ? row.box_id.toString() : '',
+        month: row.month || 'Total',
+        title: row.title || '',
+        subtitle: row.subtitle || '',
+        note: row.note || ''
+      }));
+      window.applySuggestions();
+      return;
+    }
+  } catch (error) {
+    console.error('เกิดข้อผิดพลาดในการโหลดไฟล์ suggestion:', error);
   }
+};
+
+window.applySuggestions = function() {
+  let selectedMonth = document.getElementById('filterMonth').value;
+  if (!selectedMonth) selectedMonth = 'Total';
+
+  ['1', '2'].forEach(i => {
+    const defaultTitle = i === '1' ? 'Top Ad Creative' : 'Top Ads Performance';
+    const defaultSub = i === '1' ? 'ชิ้นงานโฆษณาที่ทำผลงานได้ดีที่สุด' : 'สถิติของชิ้นงานโฆษณาที่ทำผลงานได้ดีที่สุด';
+
+    const row = suggestionData.find(r => r.box_id === i && r.month === selectedMonth) || suggestionData.find(r => r.box_id === i && r.month === 'Total');
+    
+    const titleEl = document.getElementById(`topAdTitle${i}`);
+    const subEl = document.getElementById(`topAdSub${i}`);
+    const noteEl = document.getElementById(`topAdNote${i}`);
+    const contentWrapper = document.getElementById(`topAdContentWrapper${i}`);
+    
+    if (row) {
+      if (titleEl) titleEl.textContent = row.title || defaultTitle;
+      if (subEl) subEl.textContent = row.subtitle || defaultSub;
+      
+      if (noteEl) {
+        noteEl.value = row.note || '';
+        if (row.note && row.note.trim()) {
+          noteEl.style.display = 'block';
+          if (contentWrapper) {
+            contentWrapper.style.opacity = '0';
+            contentWrapper.style.pointerEvents = 'none';
+          }
+        } else {
+          noteEl.style.display = 'none';
+          if (contentWrapper) {
+            contentWrapper.style.opacity = '1';
+            contentWrapper.style.pointerEvents = 'auto';
+          }
+        }
+      }
+    } else {
+       if (titleEl) titleEl.textContent = defaultTitle;
+       if (subEl) subEl.textContent = defaultSub;
+       if (noteEl) {
+         noteEl.value = '';
+         noteEl.style.display = 'none';
+       }
+       if (contentWrapper) {
+         contentWrapper.style.opacity = '1';
+         contentWrapper.style.pointerEvents = 'auto';
+       }
+    }
+  });
 };
 
 window.onload = function() {
@@ -434,17 +464,7 @@ window.onload = function() {
   if (document.getElementById('filterMonth')) document.getElementById('filterMonth').value = currentMonth;
   if (document.getElementById('settingYear')) document.getElementById('settingYear').value = currentYear;
   
-  loadSavedNotes();
-  
-  ['1', '2'].forEach(i => {
-    const note = document.getElementById(`topAdNote${i}`);
-    const wrapper = document.getElementById(`topAdContentWrapper${i}`);
-    if (note && note.value.trim()) {
-      note.style.display = 'block';
-      if (wrapper) wrapper.style.opacity = '0';
-    }
-  });
-  
+  window.loadSuggestions();
   window.autoLoadAllMonths();
 };
 
@@ -472,8 +492,8 @@ window.fetchMissingYear = async function(year) {
   
   const processFile = async (path, platform, monthName, isKeyword = false) => {
       try {
-          let res = await fetch(`${path}.csv`);
-          if (res.ok) {
+          let res = await safeFetch(`${path}.csv`);
+          if (res) {
               let text = await res.text();
               
               // Skip the first 2 lines for Google Ads report formats automatically
@@ -489,8 +509,8 @@ window.fetchMissingYear = async function(year) {
               }});
               return true;
           }
-          res = await fetch(`${path}.xlsx`);
-          if (res.ok) {
+          res = await safeFetch(`${path}.xlsx`);
+          if (res) {
               const arrayBuffer = await res.arrayBuffer();
               const wb = XLSX.read(arrayBuffer, { type: 'array' });
               const ws = wb.Sheets[wb.SheetNames[0]];
@@ -512,18 +532,14 @@ window.fetchMissingYear = async function(year) {
   };
 
   for (let month of months) {
-      // 1. Facebook Ads
       let fb = await processFile(`./data/facebook/${year}-${month}-TTM-FB`, 'Facebook', month);
-      // 2. Google Ads
       let gg = await processFile(`./data/google/${year}-${month}-TTM-GG`, 'Google', month);
-      // 3. Google Keyword
       let kw = await processFile(`./data/google/keyword/${year}-${month}-TTM-KW`, 'Google', month, true);
 
       if (fb || gg || kw) foundAny = true;
   }
   
   if (foundAny) {
-      // Helper function to remove commas from string numbers before parsing
       const parseNum = (val) => parseInt((val||'0').toString().replace(/,/g, '')) || 0;
       const parseDec = (val) => parseFloat((val||'0').toString().replace(/,/g, '')) || 0;
 
@@ -531,16 +547,13 @@ window.fetchMissingYear = async function(year) {
         return {
           platform: r.platform,
           campaign: r['Campaign name']||r['campaign']||r['Campaign']||'', 
-          // Use Campaign name if Ad name is missing (like in Google campaign level reports)
           ad: r['Ad name']||r['ad']||r['Ad group']||r['Campaign name']||r['Campaign']||'Unknown', 
           month: r['Month'] || r['month'] || r.inferredMonth || 'Total',
           year: year,
           spend: parseDec(r['Amount spent (THB)']||r['spend']||r['Cost']),
           reach: parseNum(r['Reach']), 
           impressions: parseNum(r['Impressions']||r['Impr.']),
-          // Support various click column names
           clicks: parseNum(r['Clicks']||r['Link clicks']||r['Clicks (all)']),
-          // Support various lead column names
           leads: parseNum(r['Leads'] || r['leads'] || r['Results'] || r['Conversions'] || r['Submit lead form'])
         };
       }).filter(r => r.campaign && r.campaign !== '-'); 
@@ -587,6 +600,7 @@ window.applyFilters = function() {
   });
 
   window.renderAll();
+  window.applySuggestions(); 
 }
 
 window.clearFilters = function() {
@@ -797,6 +811,7 @@ window.renderTopAdsMetrics = function() {
   const sortedAdMetric = Object.entries(adMetricGroups).sort((a,b)=>b[1]-a[1]);
 
   const container = document.getElementById('topAdMetricsContainer');
+  const wrapper1 = document.getElementById('topAdContentWrapper1');
   
   if (sortedAdMetric.length > 0) {
     const topAdName = sortedAdMetric[0][0];
@@ -818,9 +833,11 @@ window.renderTopAdsMetrics = function() {
       <div class="top-metric-item"><div class="tm-label">CPE</div><div class="tm-val">฿${tEng>0?formatDec(tSpend/tEng):'0.00'}</div></div>
       <div class="top-metric-item"><div class="tm-label">CPC</div><div class="tm-val">฿${tClick>0?formatDec(tSpend/tClick):'0.00'}</div></div>
       <div class="top-metric-item"><div class="tm-label">CPL</div><div class="tm-val">฿${tLead>0?formatDec(tSpend/tLead):'0.00'}</div></div>`;
+      
+    if (wrapper1) wrapper1.innerHTML = `<div style="grid-column: 1/-1; text-align:center; padding: 24px; color: var(--muted);">ไม่มีรูปภาพหรือข้อมูลวิเคราะห์</div>`;
   } else {
-    // Show completely blank if no campaign
-    container.innerHTML = ``;
+    container.innerHTML = `<div style="grid-column: 1/-1; text-align:center; padding: 24px; color: var(--muted);">ไม่พบสถิติโฆษณา</div>`;
+    if (wrapper1) wrapper1.innerHTML = `<div style="grid-column: 1/-1; text-align:center; padding: 24px; color: var(--muted);">ไม่พบข้อมูลโฆษณา</div>`;
   }
 }
 
@@ -858,22 +875,26 @@ window.renderTable = function() {
   });
 
   document.getElementById('tableCount').textContent = `แสดง ${groupedData.length} รายการ`;
-  document.getElementById('tableBody').innerHTML = groupedData.map(r=>{
-    const pColor = r.platform === 'Facebook' ? '#1877F2' : '#EA4335';
-    return `<tr>
-      <td title="${r.ad}" style="max-width:240px; overflow:hidden; text-overflow:ellipsis;"><span>${r.ad}</span></td>
-      <td><span style="color:${pColor}; font-weight:600;">${r.platform}</span></td>
-      <td class="cost-cell">฿${formatDec(r.spend)}</td>
-      <td class="num">${formatNum(r.reach)}</td>
-      <td class="num">${formatNum(r.impressions)}</td>
-      <td class="num">${formatNum(r.clicks)}</td>
-      <td class="num">${formatNum(r.leads)}</td>
-      <td class="cost-cell">฿${formatDec(r.cpm)}</td>
-      <td class="cost-cell">฿${formatDec(r.cpc)}</td>
-      <td class="cost-cell">฿${formatDec(r.cpl)}</td>
-      <td class="num text-blue">${formatDec(r.ctr)}%</td>
-    </tr>`;
-  }).join('');
+  if (groupedData.length === 0) {
+    document.getElementById('tableBody').innerHTML = `<tr><td colspan="11" style="text-align:center; color:var(--muted);">ไม่พบข้อมูลโฆษณาในระบบ</td></tr>`;
+  } else {
+    document.getElementById('tableBody').innerHTML = groupedData.map(r=>{
+      const pColor = r.platform === 'Facebook' ? '#1877F2' : '#EA4335';
+      return `<tr>
+        <td title="${r.ad}" style="max-width:240px; overflow:hidden; text-overflow:ellipsis;"><span>${r.ad}</span></td>
+        <td><span style="color:${pColor}; font-weight:600;">${r.platform}</span></td>
+        <td class="cost-cell">฿${formatDec(r.spend)}</td>
+        <td class="num">${formatNum(r.reach)}</td>
+        <td class="num">${formatNum(r.impressions)}</td>
+        <td class="num">${formatNum(r.clicks)}</td>
+        <td class="num">${formatNum(r.leads)}</td>
+        <td class="cost-cell">฿${formatDec(r.cpm)}</td>
+        <td class="cost-cell">฿${formatDec(r.cpc)}</td>
+        <td class="cost-cell">฿${formatDec(r.cpl)}</td>
+        <td class="num text-blue">${formatDec(r.ctr)}%</td>
+      </tr>`;
+    }).join('');
+  }
 }
 
 window.switchTableTab = function(e, tabId) {
