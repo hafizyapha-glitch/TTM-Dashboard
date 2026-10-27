@@ -117,6 +117,12 @@
 
     #statusBar { display: none; background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2); border-radius: 8px; padding: 12px 16px; font-size: 14px; font-weight: 500; color: var(--green); margin-bottom: 16px; }
 
+    /* Custom Scrollbar for Gallery */
+    .scroll-gallery::-webkit-scrollbar { height: 8px; }
+    .scroll-gallery::-webkit-scrollbar-track { background: var(--surface); border-radius: 4px; }
+    .scroll-gallery::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
+    .scroll-gallery::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+
     /* Drawer & Settings */
     .drawer-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.5); z-index: 999; opacity: 0; visibility: hidden; transition: all 0.3s ease; }
     .drawer-overlay.show { opacity: 1; visibility: visible; }
@@ -223,7 +229,7 @@
             <th class="sortable" onclick="window.handleSortKeyword('keyword')">Keyword <span class="sort-icon" id="sortIcon-kw-keyword"></span></th>
             <th class="sortable cost-cell" onclick="window.handleSortKeyword('spend')">Spend (฿) <span class="sort-icon" id="sortIcon-kw-spend"></span></th>
             <th class="sortable num" onclick="window.handleSortKeyword('impr')">Impr. <span class="sort-icon" id="sortIcon-kw-impr"></span></th>
-            <th class="sortable num" onclick="window.handleSortKeyword('clicks')">Clicks <span class="sort-icon" id="sortIcon-kw-clicks"></span></th>
+            <th class="sortable num" onclick="window.handleSortKeyword('message')">Message <span class="sort-icon" id="sortIcon-kw-message"></span></th>
             <th class="sortable num" onclick="window.handleSortKeyword('ctr')">CTR (%) <span class="sort-icon" id="sortIcon-kw-ctr"></span></th>
             <th class="sortable num" onclick="window.handleSortKeyword('conv')">Conv. <span class="sort-icon" id="sortIcon-kw-conv"></span></th>
             <th class="sortable num" onclick="window.handleSortKeyword('cvr')">CVR (%) <span class="sort-icon" id="sortIcon-kw-cvr"></span></th>
@@ -312,10 +318,10 @@
               <th class="sortable cost-cell" onclick="window.handleSort('spend')">Spend (฿) <span class="sort-icon" id="sortIcon-spend"></span></th>
               <th class="sortable num" onclick="window.handleSort('reach')">Reach <span class="sort-icon" id="sortIcon-reach"></span></th>
               <th class="sortable num" onclick="window.handleSort('impressions')">Impressions <span class="sort-icon" id="sortIcon-impressions"></span></th>
-              <th class="sortable num" onclick="window.handleSort('clicks')">Clicks <span class="sort-icon" id="sortIcon-clicks"></span></th>
+              <th class="sortable num" onclick="window.handleSort('message')">Message <span class="sort-icon" id="sortIcon-message"></span></th>
               <th class="sortable num" onclick="window.handleSort('leads')">Leads <span class="sort-icon" id="sortIcon-leads"></span></th>
               <th class="sortable cost-cell" onclick="window.handleSort('cpm')">CPM (฿) <span class="sort-icon" id="sortIcon-cpm"></span></th>
-              <th class="sortable cost-cell" onclick="window.handleSort('cpc')">CPC (฿) <span class="sort-icon" id="sortIcon-cpc"></span></th>
+              <th class="sortable cost-cell" onclick="window.handleSort('cpmsg')">CPMsg (฿) <span class="sort-icon" id="sortIcon-cpmsg"></span></th>
               <th class="sortable cost-cell" onclick="window.handleSort('cpl')">CPL (฿) <span class="sort-icon" id="sortIcon-cpl"></span></th>
               <th class="sortable num" onclick="window.handleSort('ctr')">CTR (%) <span class="sort-icon" id="sortIcon-ctr"></span></th>
             </tr></thead>
@@ -357,6 +363,7 @@ let allData = [];
 let keywordData = [];
 let filteredData = []; 
 let filteredKeywordData = [];
+let currentFbGallerySort = 'spend';
 
 // 1. ตัวแปรสำหรับเก็บข้อมูลข้อเสนอแนะทั้งหมด
 let suggestionData = []; 
@@ -550,7 +557,7 @@ window.fetchMissingYear = async function(year) {
           spend: parseDec(r['Amount spent (THB)']||r['spend']||r['Cost']),
           reach: parseNum(r['Reach']), 
           impressions: parseNum(r['Impressions']||r['Impr.']),
-          clicks: parseNum(r['Clicks']||r['Link clicks']||r['Clicks (all)']),
+          message: parseNum(r['Clicks']||r['Link clicks']||r['Clicks (all)']||r['Messaging conversations started']||r['Message']||r['message']),
           leads: parseNum(r['Leads'] || r['leads'] || r['Results'] || r['Conversions'] || r['Submit lead form'])
         };
       }).filter(r => r.campaign && r.campaign !== '-'); 
@@ -562,7 +569,7 @@ window.fetchMissingYear = async function(year) {
           year: year,
           spend: parseDec(r['Cost'] || r['Cost (THB)'] || r['spend']),
           impressions: parseNum(r['Impr.'] || r['Impressions']),
-          clicks: parseNum(r['Clicks']),
+          message: parseNum(r['Clicks']||r['Message']||r['message']),
           conversions: parseDec(r['Conversions'] || r['conversions'] || r['Conv.'])
         };
       }).filter(r => r.keyword && r.keyword !== '-');
@@ -607,6 +614,11 @@ window.clearFilters = function() {
   window.applyFilters();
 }
 
+window.handleFbGallerySort = function(val) {
+  currentFbGallerySort = val;
+  window.renderKPIs();
+}
+
 window.populateFilters = function() {
   const campaigns = [...new Set(allData.map(r=>r.campaign))].filter(c=>c).sort();
   document.getElementById('filterCampaign').innerHTML = '<option value="">ทุก Campaign</option>'+campaigns.map(c=>`<option value="${c}">${c}</option>`).join('');
@@ -649,7 +661,7 @@ window.renderKPIs = function() {
   const iconSpend = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"/><path d="M4 6v12c0 1.1.9 2 2 2h14v-4"/><path d="M18 12a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4v-4h-4z"/></svg>';
   const iconReach = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>';
   const iconImpr = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>';
-  const iconClick = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>';
+  const iconMessage = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>';
   const iconLead = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>';
   const iconFreq = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><line x1="3" y1="3" x2="3" y2="21"/><line x1="3" y1="21" x2="21" y2="21"/><polyline points="7 16 11 12 15 14 20 9"/></svg>';
   const iconCost = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="12" y1="2" x2="12" y2="6"/></svg>';
@@ -658,16 +670,16 @@ window.renderKPIs = function() {
     const spend = dataSet.reduce((s,r)=>s+r.spend,0);
     const reach = dataSet.reduce((s,r)=>s+r.reach,0);
     const impr = dataSet.reduce((s,r)=>s+r.impressions,0);
-    const clicks = dataSet.reduce((s,r)=>s+r.clicks,0);
+    const message = dataSet.reduce((s,r)=>s+r.message,0);
     const leads = dataSet.reduce((s,r)=>s+r.leads,0);
     
     const freq = hasReach && reach > 0 ? impr/reach : 0;
     const cpr = hasReach && reach > 0 ? (spend/reach)*1000 : 0;
     const cpm = impr > 0 ? (spend/impr)*1000 : 0;
-    const cpc = clicks > 0 ? spend/clicks : 0;
+    const cpmsg = message > 0 ? spend/message : 0;
     const cpl = leads > 0 ? spend/leads : 0;
 
-    return { spend, reach, impr, clicks, leads, freq, cpr, cpm, cpc, cpl };
+    return { spend, reach, impr, message, leads, freq, cpr, cpm, cpmsg, cpl };
   };
 
   const o = getMetrics(d);
@@ -683,7 +695,7 @@ window.renderKPIs = function() {
       ${createKPICardWithBench(iconSpend, 'Total Spend', '', '฿'+formatDec(o.spend), 'var(--primary)')}
       ${createKPICardWithBench(iconReach, 'Reach', '', formatNum(o.reach), 'var(--green)')}
       ${createKPICardWithBench(iconImpr, 'Impressions', '', formatNum(o.impr), 'var(--blue)')}
-      ${createKPICardWithBench(iconClick, 'Clicks', '', formatNum(o.clicks), 'var(--accent)')}
+      ${createKPICardWithBench(iconMessage, 'Message', '', formatNum(o.message), 'var(--accent)')}
       ${createKPICardWithBench(iconLead, 'Leads', '', formatNum(o.leads), '#06B6D4')}
       ${createKPICardWithBench(iconFreq, 'Frequency', '', o.freq.toFixed(2), '#8B5CF6')}
     </div>
@@ -691,7 +703,7 @@ window.renderKPIs = function() {
     <div class="kpi-grid row4">
       ${createKPICardWithBench(iconCost, 'Cost per 1,000 Reach (CPR)', 'Cost per 1,000 reach', '฿'+formatDec(o.cpr), 'var(--green)', '฿80-฿150')}
       ${createKPICardWithBench(iconCost, 'CPM', 'Cost per 1,000 impressions', '฿'+formatDec(o.cpm), 'var(--primary)', '฿50-฿150')}
-      ${createKPICardWithBench(iconCost, 'CPC', 'Cost per click', '฿'+formatDec(o.cpc), 'var(--accent)', '฿5-฿25')}
+      ${createKPICardWithBench(iconCost, 'CPMsg', 'Cost per message', '฿'+formatDec(o.cpmsg), 'var(--accent)', '฿5-฿25')}
       ${createKPICardWithBench(iconCost, 'Cost per Lead (CPL)', 'Cost per submitted lead form', '฿'+formatDec(o.cpl), '#06B6D4', '฿150-฿500')}
     </div>
     <div style="text-align: right; font-size: 11px; color: var(--muted); margin-top: -8px; margin-bottom: 24px;">Benchmark ref: Industry Average (Thailand)</div>
@@ -704,7 +716,7 @@ window.renderKPIs = function() {
       ${createKPICardWithBench(iconSpend, 'Total Spend', '', '฿'+formatDec(fb.spend), '#1877F2')}
       ${createKPICardWithBench(iconReach, 'Reach', '', formatNum(fb.reach), 'var(--green)')}
       ${createKPICardWithBench(iconImpr, 'Impressions', '', formatNum(fb.impr), 'var(--blue)')}
-      ${createKPICardWithBench(iconClick, 'Clicks', '', formatNum(fb.clicks), 'var(--accent)')}
+      ${createKPICardWithBench(iconMessage, 'Message', '', formatNum(fb.message), 'var(--accent)')}
       ${createKPICardWithBench(iconLead, 'Leads', '', formatNum(fb.leads), '#06B6D4')}
       ${createKPICardWithBench(iconFreq, 'Frequency', '', fb.freq.toFixed(2), '#8B5CF6')}
     </div>
@@ -712,11 +724,83 @@ window.renderKPIs = function() {
     <div class="kpi-grid row4">
       ${createKPICardWithBench(iconCost, 'Cost per 1,000 Reach (CPR)', 'Cost per 1,000 reach', '฿'+formatDec(fb.cpr), 'var(--green)', '฿80-฿150')}
       ${createKPICardWithBench(iconCost, 'CPM', 'Cost per 1,000 impressions', '฿'+formatDec(fb.cpm), '#1877F2', '฿50-฿120')}
-      ${createKPICardWithBench(iconCost, 'CPC', 'Cost per link click', '฿'+formatDec(fb.cpc), 'var(--accent)', '฿3-฿15')}
+      ${createKPICardWithBench(iconCost, 'CPMsg', 'Cost per message', '฿'+formatDec(fb.cpmsg), 'var(--accent)', '฿3-฿15')}
       ${createKPICardWithBench(iconCost, 'Cost per Lead (CPL)', 'Cost per submitted lead form', '฿'+formatDec(fb.cpl), '#06B6D4', '฿100-฿400')}
     </div>
     <div style="text-align: right; font-size: 11px; color: var(--muted); margin-top: -8px; margin-bottom: 24px;">Benchmark ref: Meta Business Suite / Wordstream Facebook Ads 2025 (Thailand)</div>
   `;
+
+  // --- เริ่มต้นส่วน Facebook Content Performance Gallery ---
+  const fbAdGroups = {};
+  fbData.forEach(r => {
+    if (!fbAdGroups[r.ad]) fbAdGroups[r.ad] = { ad: r.ad, spend: 0, reach: 0, impressions: 0, message: 0 };
+    fbAdGroups[r.ad].spend += r.spend;
+    fbAdGroups[r.ad].reach += r.reach;
+    fbAdGroups[r.ad].impressions += r.impressions;
+    fbAdGroups[r.ad].message += r.message;
+  });
+  
+  // จัดเรียงตามค่าที่เลือกใน Filter (Top 10)
+  const topFbAds = Object.values(fbAdGroups).sort((a,b) => b[currentFbGallerySort] - a[currentFbGallerySort]).slice(0, 10);
+
+  html += `
+    <div style="display:flex; align-items:center; gap:8px; margin-top:32px; margin-bottom:16px;">
+      <div style="width:4px; height:24px; background:#1877F2; border-radius:2px;"></div>
+      <div style="font-size:18px; font-weight:700; color:var(--text);">Facebook Content Performance</div>
+    </div>
+    <div class="table-card" style="margin-top: 0; padding: 24px 24px 8px 24px; margin-bottom: 32px; overflow: hidden;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:24px;">
+        <div>
+          <div style="font-size:16px; font-weight:700; color:var(--text);">Facebook Ads Performance Gallery</div>
+          <div style="font-size:13px; color:var(--text-secondary); margin-top:4px;">Top 10 Content • เลื่อนซ้าย-ขวาเพื่อดูรายละเอียด Performance</div>
+        </div>
+        <select id="fbGallerySort" onchange="window.handleFbGallerySort(this.value)" style="width:auto; padding:6px 28px 6px 12px; font-size:13px; background-color:var(--surface);">
+          <option value="spend" ${currentFbGallerySort === 'spend' ? 'selected' : ''}>Spend สูงสุด</option>
+          <option value="reach" ${currentFbGallerySort === 'reach' ? 'selected' : ''}>Reach สูงสุด</option>
+          <option value="impressions" ${currentFbGallerySort === 'impressions' ? 'selected' : ''}>Impression สูงสุด</option>
+          <option value="message" ${currentFbGallerySort === 'message' ? 'selected' : ''}>Message สูงสุด</option>
+        </select>
+      </div>
+      <div class="scroll-gallery" style="display:flex; gap:16px; overflow-x:auto; padding-bottom:16px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;">
+  `;
+
+  if(topFbAds.length === 0) {
+     html += `<div style="width:100%; text-align:center; padding:32px; color:var(--muted); font-size:14px;">ไม่พบข้อมูล Facebook Ads สำหรับเดือนนี้</div>`;
+  } else {
+     topFbAds.forEach((ad, index) => {
+       let cpm = ad.impressions > 0 ? (ad.spend/ad.impressions)*1000 : 0;
+       let cpmsg = ad.message > 0 ? ad.spend/ad.message : 0;
+       let imagePath = `./data/facebook/image/${ad.ad}.jpg`;
+       
+       html += `
+       <div style="min-width:280px; max-width:280px; background:var(--card); border:1px solid var(--border); border-radius:12px; overflow:hidden; scroll-snap-align: start; display:flex; flex-direction:column; box-shadow:var(--shadow-sm);">
+          <div style="height:160px; background:var(--surface); position:relative; overflow:hidden; border-bottom:1px solid var(--border);">
+             <div style="position:absolute; top:8px; left:8px; background:rgba(0,0,0,0.6); color:#FFF; font-weight:700; padding:2px 8px; border-radius:12px; font-size:11px; z-index:10;">#${index+1}</div>
+             
+             <!-- Placeholder with Monospace Path (Shown if image fails) -->
+             <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:12px; text-align:center; z-index:1;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.5; margin-bottom:8px;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                <div style="font-family: monospace; font-size: 11px; color: var(--muted); word-break: break-all; background: var(--bg); padding: 4px 8px; border-radius: 4px; border: 1px dashed var(--border);">${imagePath}</div>
+             </div>
+             
+             <!-- Actual Image with Fallback Logic -->
+             <img src="${imagePath}" alt="${ad.ad}" style="width:100%; height:100%; object-fit:cover; position:relative; z-index:2;" onerror="this.style.display='none'">
+          </div>
+          <div style="padding:16px; flex:1; display:flex; flex-direction:column;">
+             <div style="font-size:14px; font-weight:700; color:var(--text); margin-bottom:16px; line-height:1.4; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;" title="${ad.ad}">${ad.ad}</div>
+                <div><div style="color:var(--text-secondary); margin-bottom:4px;">CPMsg</div><div style="font-weight:700; color:var(--text);">฿${formatDec(cpmsg)}</div></div>
+             </div>
+          </div>
+       </div>
+       `;
+     });
+  }
+
+  html += `
+      </div>
+    </div>
+  `;
+  // --- สิ้นสุดส่วน Facebook Content Performance Gallery ---
 
   html += `
     <div class="kpi-section-title" style="color:#EA4335;">Google Ads Performance</div>
@@ -724,13 +808,13 @@ window.renderKPIs = function() {
     <div class="kpi-grid row4">
       ${createKPICardWithBench(iconSpend, 'Total Spend', '', '฿'+formatDec(gg.spend), '#EA4335')}
       ${createKPICardWithBench(iconImpr, 'Impressions', '', formatNum(gg.impr), 'var(--blue)')}
-      ${createKPICardWithBench(iconClick, 'Clicks', '', formatNum(gg.clicks), 'var(--accent)')}
+      ${createKPICardWithBench(iconMessage, 'Message', '', formatNum(gg.message), 'var(--accent)')}
       ${createKPICardWithBench(iconLead, 'Leads', '', formatNum(gg.leads), '#06B6D4')}
     </div>
     <div class="kpi-group-label">Cost Efficiency</div>
     <div class="kpi-grid row3">
       ${createKPICardWithBench(iconCost, 'CPM', 'Cost per 1,000 impressions', '฿'+formatDec(gg.cpm), '#EA4335', '฿80-฿200')}
-      ${createKPICardWithBench(iconCost, 'CPC', 'Cost per click', '฿'+formatDec(gg.cpc), 'var(--accent)', '฿10-฿30')}
+      ${createKPICardWithBench(iconCost, 'CPMsg', 'Cost per message', '฿'+formatDec(gg.cpmsg), 'var(--accent)', '฿10-฿30')}
       ${createKPICardWithBench(iconCost, 'Cost per Lead (CPL)', 'Cost per conversion', '฿'+formatDec(gg.cpl), '#06B6D4', '฿200-฿800')}
     </div>
     <div style="text-align: right; font-size: 11px; color: var(--muted); margin-top: -8px; margin-bottom: 24px;">Benchmark ref: Google Ads Industry Benchmark (Thailand)</div>
@@ -739,7 +823,7 @@ window.renderKPIs = function() {
   document.getElementById('kpiSection').innerHTML = html;
 }
 
-let currentSortKwCol = 'clicks', currentSortKwAsc = false;
+let currentSortKwCol = 'message', currentSortKwAsc = false;
 window.handleSortKeyword = function(col) {
   if (currentSortKwCol === col) currentSortKwAsc = !currentSortKwAsc;
   else { currentSortKwCol = col; currentSortKwAsc = col === 'keyword' ? true : false; }
@@ -750,16 +834,16 @@ window.renderKeywordTable = function() {
   const groupedObj = {};
   filteredKeywordData.forEach(r => {
     const kw = r.keyword;
-    if (!groupedObj[kw]) groupedObj[kw] = { keyword: kw, spend: 0, impr: 0, clicks: 0, conv: 0 };
+    if (!groupedObj[kw]) groupedObj[kw] = { keyword: kw, spend: 0, impr: 0, message: 0, conv: 0 };
     groupedObj[kw].spend += r.spend;
     groupedObj[kw].impr += r.impressions;
-    groupedObj[kw].clicks += r.clicks;
+    groupedObj[kw].message += r.message;
     groupedObj[kw].conv += r.conversions;
   });
 
   let groupedData = Object.values(groupedObj).map(r => {
-    r.ctr = r.impr > 0 ? (r.clicks / r.impr) * 100 : 0;
-    r.cvr = r.clicks > 0 ? (r.conv / r.clicks) * 100 : 0;
+    r.ctr = r.impr > 0 ? (r.message / r.impr) * 100 : 0;
+    r.cvr = r.message > 0 ? (r.conv / r.message) * 100 : 0;
     return r;
   });
 
@@ -769,7 +853,7 @@ window.renderKeywordTable = function() {
     return currentSortKwAsc ? vA - vB : vB - vA;
   });
 
-  ['keyword','spend','impr','clicks','ctr','conv','cvr'].forEach(c => {
+  ['keyword','spend','impr','message','ctr','conv','cvr'].forEach(c => {
     const el = document.getElementById(`sortIcon-kw-${c}`);
     if (el) el.innerHTML = c === currentSortKwCol ? (currentSortKwAsc ? '▲' : '▼') : '';
   });
@@ -789,7 +873,7 @@ window.renderKeywordTable = function() {
       <td>${r.keyword}</td>
       <td class="cost-cell">฿${formatDec(r.spend)}</td>
       <td class="num">${formatNum(r.impr)}</td>
-      <td class="num">${formatNum(r.clicks)}</td>
+      <td class="num">${formatNum(r.message)}</td>
       <td class="num text-blue">${formatDec(r.ctr)}%</td>
       <td class="num">${formatDec(r.conv)}</td>
       <td class="num text-blue">${formatDec(r.cvr)}%</td>
@@ -807,10 +891,10 @@ window.renderTopAdsMetrics = function() {
   
   if (sortedAdMetric.length > 0) {
     const topAdName = sortedAdMetric[0][0];
-    let tSpend=0, tReach=0, tImpr=0, tClick=0, tLead=0, tEng=0;
+    let tSpend=0, tReach=0, tImpr=0, tMessage=0, tLead=0, tEng=0;
     d.filter(r => r.ad === topAdName).forEach(r => { 
       tSpend+=r.spend; tReach+=r.reach; tImpr+=r.impressions; 
-      tClick+=r.clicks; tLead+=r.leads; tEng+=r.engagements; 
+      tMessage+=r.message; tLead+=r.leads; tEng+=r.engagements; 
     });
 
     container.innerHTML = `
@@ -818,12 +902,12 @@ window.renderTopAdsMetrics = function() {
       <div class="top-metric-item"><div class="tm-label">Spending</div><div class="tm-val">฿${formatDec(tSpend)}</div></div>
       <div class="top-metric-item"><div class="tm-label">Reach</div><div class="tm-val">${formatNum(tReach)}</div></div>
       <div class="top-metric-item"><div class="tm-label">Impressions</div><div class="tm-val">${formatNum(tImpr)}</div></div>
-      <div class="top-metric-item"><div class="tm-label">Clicks</div><div class="tm-val">${formatNum(tClick)}</div></div>
+      <div class="top-metric-item"><div class="tm-label">Message</div><div class="tm-val">${formatNum(tMessage)}</div></div>
       <div class="top-metric-item"><div class="tm-label">Leads</div><div class="tm-val">${formatNum(tLead)}</div></div>
       <div class="top-metric-item"><div class="tm-label">Engagements</div><div class="tm-val">${formatNum(tEng)}</div></div>
       <div class="top-metric-item"><div class="tm-label">CPM</div><div class="tm-val">฿${tImpr>0?formatDec((tSpend/tImpr)*1000):'0.00'}</div></div>
       <div class="top-metric-item"><div class="tm-label">CPE</div><div class="tm-val">฿${tEng>0?formatDec(tSpend/tEng):'0.00'}</div></div>
-      <div class="top-metric-item"><div class="tm-label">CPC</div><div class="tm-val">฿${tClick>0?formatDec(tSpend/tClick):'0.00'}</div></div>
+      <div class="top-metric-item"><div class="tm-label">CPMsg</div><div class="tm-val">฿${tMessage>0?formatDec(tSpend/tMessage):'0.00'}</div></div>
       <div class="top-metric-item"><div class="tm-label">CPL</div><div class="tm-val">฿${tLead>0?formatDec(tSpend/tLead):'0.00'}</div></div>`;
   } else {
     container.innerHTML = ``;
@@ -840,17 +924,17 @@ window.handleSort = function(col) {
 window.renderTable = function() {
   const groupedObj = {};
   filteredData.forEach(r => {
-    if (!groupedObj[r.ad]) groupedObj[r.ad] = { ad: r.ad, platform: r.platform, spend: 0, reach: 0, impressions: 0, clicks: 0, leads: 0 };
+    if (!groupedObj[r.ad]) groupedObj[r.ad] = { ad: r.ad, platform: r.platform, spend: 0, reach: 0, impressions: 0, message: 0, leads: 0 };
     groupedObj[r.ad].spend += r.spend; groupedObj[r.ad].reach += r.reach; 
-    groupedObj[r.ad].impressions += r.impressions; groupedObj[r.ad].clicks += r.clicks; 
+    groupedObj[r.ad].impressions += r.impressions; groupedObj[r.ad].message += r.message; 
     groupedObj[r.ad].leads += r.leads;
   });
 
   const groupedData = Object.values(groupedObj).map(r => {
     r.cpm = r.impressions > 0 ? (r.spend / r.impressions) * 1000 : 0;
-    r.cpc = r.clicks > 0 ? (r.spend / r.clicks) : 0;
+    r.cpmsg = r.message > 0 ? (r.spend / r.message) : 0;
     r.cpl = r.leads > 0 ? (r.spend / r.leads) : 0;
-    r.ctr = r.impressions > 0 ? (r.clicks / r.impressions) * 100 : 0;
+    r.ctr = r.impressions > 0 ? (r.message / r.impressions) * 100 : 0;
     return r;
   }).sort((a, b) => {
     let vA = a[currentSortCol], vB = b[currentSortCol];
@@ -858,7 +942,7 @@ window.renderTable = function() {
     return currentSortAsc ? vA - vB : vB - vA;
   });
 
-  ['ad','platform','spend','reach','impressions','clicks','leads','cpm','cpc','cpl','ctr'].forEach(c => {
+  ['ad','platform','spend','reach','impressions','message','leads','cpm','cpmsg','cpl','ctr'].forEach(c => {
     const el = document.getElementById(`sortIcon-${c}`);
     if (el) el.innerHTML = c === currentSortCol ? (currentSortAsc ? '▲' : '▼') : '';
   });
@@ -872,10 +956,10 @@ window.renderTable = function() {
       <td class="cost-cell">฿${formatDec(r.spend)}</td>
       <td class="num">${formatNum(r.reach)}</td>
       <td class="num">${formatNum(r.impressions)}</td>
-      <td class="num">${formatNum(r.clicks)}</td>
+      <td class="num">${formatNum(r.message)}</td>
       <td class="num">${formatNum(r.leads)}</td>
       <td class="cost-cell">฿${formatDec(r.cpm)}</td>
-      <td class="cost-cell">฿${formatDec(r.cpc)}</td>
+      <td class="cost-cell">฿${formatDec(r.cpmsg)}</td>
       <td class="cost-cell">฿${formatDec(r.cpl)}</td>
       <td class="num text-blue">${formatDec(r.ctr)}%</td>
     </tr>`;
