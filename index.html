@@ -307,10 +307,36 @@
     <!-- Ad Performance Tabs -->
     <div class="table-card">
       <div class="tab-bar">
-        <button class="tab-btn active" onclick="window.switchTableTab(event, 'adPerformance')">Ad Performance</button>
+        <button class="tab-btn active" onclick="window.switchTableTab(event, 'campaignPerformance')">Campaign Performance</button>
+        <button class="tab-btn" onclick="window.switchTableTab(event, 'adPerformance')">Ad Performance</button>
       </div>
 
-      <div id="adPerformance" class="tab-content active" style="padding-top: 0;">
+      <!-- Campaign Performance Tab Content -->
+      <div id="campaignPerformance" class="tab-content active" style="padding-top: 0;">
+        <div style="padding: 24px 0 16px 0;">
+          <div class="chart-sub" id="tableCountCamp" style="margin-bottom:0;">แสดงรายการทั้งหมด</div>
+        </div>
+        <div class="table-responsive">
+          <table>
+            <thead><tr>
+              <th class="sortable" onclick="window.handleSortCamp('campaign')">Campaign Name <span class="sort-icon" id="sortIcon-camp-campaign"></span></th>
+              <th class="sortable" onclick="window.handleSortCamp('platform')">Platform <span class="sort-icon" id="sortIcon-camp-platform"></span></th>
+              <th class="sortable cost-cell" onclick="window.handleSortCamp('spend')">Spend (฿) <span class="sort-icon" id="sortIcon-camp-spend"></span></th>
+              <th class="sortable num" onclick="window.handleSortCamp('reach')">Reach <span class="sort-icon" id="sortIcon-camp-reach"></span></th>
+              <th class="sortable num" onclick="window.handleSortCamp('impressions')">Impressions <span class="sort-icon" id="sortIcon-camp-impressions"></span></th>
+              <th class="sortable num" onclick="window.handleSortCamp('message')">Message <span class="sort-icon" id="sortIcon-camp-message"></span></th>
+              <th class="sortable num" onclick="window.handleSortCamp('leads')">Leads <span class="sort-icon" id="sortIcon-camp-leads"></span></th>
+              <th class="sortable cost-cell" onclick="window.handleSortCamp('cpm')">CPM (฿) <span class="sort-icon" id="sortIcon-camp-cpm"></span></th>
+              <th class="sortable cost-cell" onclick="window.handleSortCamp('cpmsg')">CPMsg (฿) <span class="sort-icon" id="sortIcon-camp-cpmsg"></span></th>
+              <th class="sortable cost-cell" onclick="window.handleSortCamp('cpl')">CPL (฿) <span class="sort-icon" id="sortIcon-camp-cpl"></span></th>
+              <th class="sortable num" onclick="window.handleSortCamp('ctr')">CTR (%) <span class="sort-icon" id="sortIcon-camp-ctr"></span></th>
+            </tr></thead>
+            <tbody id="tableBodyCamp"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="adPerformance" class="tab-content" style="padding-top: 0;">
         <div style="padding: 24px 0 16px 0;">
           <div class="chart-sub" id="tableCount" style="margin-bottom:0;">แสดงรายการทั้งหมด</div>
         </div>
@@ -633,6 +659,7 @@ window.renderAll = function() {
   window.renderKeywordTable();
   window.renderTopAdsMetrics();
   window.renderTable(); 
+  window.renderCampaignTable();
 }
 
 const formatNum = (v) => v.toLocaleString();
@@ -1002,6 +1029,59 @@ window.renderTable = function() {
     const pColor = r.platform === 'Facebook' ? '#1877F2' : '#EA4335';
     return `<tr>
       <td title="${r.ad}" style="max-width:240px; overflow:hidden; text-overflow:ellipsis;"><span>${r.ad}</span></td>
+      <td><span style="color:${pColor}; font-weight:600;">${r.platform}</span></td>
+      <td class="cost-cell">฿${formatDec(r.spend)}</td>
+      <td class="num">${formatNum(r.reach)}</td>
+      <td class="num">${formatNum(r.impressions)}</td>
+      <td class="num">${formatNum(r.message)}</td>
+      <td class="num">${formatNum(r.leads)}</td>
+      <td class="cost-cell">฿${formatDec(r.cpm)}</td>
+      <td class="cost-cell">฿${formatDec(r.cpmsg)}</td>
+      <td class="cost-cell">฿${formatDec(r.cpl)}</td>
+      <td class="num text-blue">${formatDec(r.ctr)}%</td>
+    </tr>`;
+  }).join('');
+}
+
+let currentSortCampCol = 'spend', currentSortCampAsc = false;
+window.handleSortCamp = function(col) {
+  if (currentSortCampCol === col) currentSortCampAsc = !currentSortCampAsc;
+  else { currentSortCampCol = col; currentSortCampAsc = col === 'campaign' || col === 'platform' ? true : false; }
+  window.renderCampaignTable();
+};
+
+window.renderCampaignTable = function() {
+  const groupedObj = {};
+  filteredData.forEach(r => {
+    const key = r.campaign + '_' + r.platform;
+    if (!groupedObj[key]) groupedObj[key] = { campaign: r.campaign, platform: r.platform, spend: 0, reach: 0, impressions: 0, message: 0, leads: 0 };
+    groupedObj[key].spend += r.spend; groupedObj[key].reach += r.reach; 
+    groupedObj[key].impressions += r.impressions; groupedObj[key].message += r.message; 
+    groupedObj[key].leads += r.leads;
+  });
+
+  const groupedData = Object.values(groupedObj).map(r => {
+    r.cpm = r.impressions > 0 ? (r.spend / r.impressions) * 1000 : 0;
+    r.cpmsg = r.message > 0 ? (r.spend / r.message) : 0;
+    r.cpl = r.leads > 0 ? (r.spend / r.leads) : 0;
+    r.ctr = r.impressions > 0 ? (r.message / r.impressions) * 100 : 0;
+    return r;
+  }).sort((a, b) => {
+    let vA = a[currentSortCampCol], vB = b[currentSortCampCol];
+    if (typeof vA === 'string') return currentSortCampAsc ? vA.localeCompare(vB) : vB.localeCompare(vA);
+    return currentSortCampAsc ? vA - vB : vB - vA;
+  });
+
+  ['campaign','platform','spend','reach','impressions','message','leads','cpm','cpmsg','cpl','ctr'].forEach(c => {
+    const el = document.getElementById(`sortIcon-camp-${c}`);
+    if (el) el.innerHTML = c === currentSortCampCol ? (currentSortCampAsc ? '▲' : '▼') : '';
+  });
+
+  document.getElementById('tableCountCamp').textContent = `แสดง ${groupedData.length} รายการ`;
+  document.getElementById('tableBodyCamp').innerHTML = groupedData.map(r=>{
+    const pColor = r.platform === 'Facebook' ? '#1877F2' : '#EA4335';
+    return `<tr>
+      <td title="${r.campaign}" style="max-width:240px; overflow:hidden; text-overflow:ellipsis;"><span>${r.campaign}</span></td>
       <td><span style="color:${pColor}; font-weight:600;">${r.platform}</span></td>
       <td class="cost-cell">฿${formatDec(r.spend)}</td>
       <td class="num">${formatNum(r.reach)}</td>
