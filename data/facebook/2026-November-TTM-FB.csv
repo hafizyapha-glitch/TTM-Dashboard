@@ -1,0 +1,17 @@
+﻿"Campaign name","Ad name","Ad set name",Reach,Impressions,"Amount spent (THB)","Messaging conversations started","Reporting starts","Reporting ends"
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",3644,4190,309.87,6,2026-11-01,2026-11-17
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",3465,4253,522.54,10,2026-11-01,2026-11-17
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",9294,14214,1481.62,26,2026-11-01,2026-11-17
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",6512,11732,1511.01,27,2026-11-01,2026-11-17
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2687,3251,349.83,3,2026-11-01,2026-11-17
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",530,651,111.99,1,2026-11-01,2026-11-17
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",7050,8044,926.61,6,2026-11-01,2026-11-17
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",1294,1718,264.07,3,2026-11-01,2026-11-17
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",197,223,17.65,1,2026-11-01,2026-11-17
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",33921,55049,5665.58,106,2026-11-01,2026-11-17
+"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-Constructors,0,0,0,1,2026-11-01,2026-11-17
+"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",6659,9602,1000.99,26,2026-11-01,2026-11-17
+"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",1157,1448,153.47,,2026-11-01,2026-11-17
+"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",5629,8948,1153.56,16,2026-11-01,2026-11-17
+"2400 | TTM | Message | Eastern",Eastern-Online,TTM-Message-Eastern-lookalike,0,0,0,1,2026-11-01,2026-11-17
+"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-lookalike,0,0,0,1,2026-11-01,2026-11-17
