@@ -1,476 +1,155 @@
 ﻿"Campaign name","Ad name","Ad set name",Day,Reach,Impressions,"Amount spent (THB)","Messaging conversations started",Leads,"Reporting starts","Reporting ends"
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-31,619,668,65.25,1,1,2026-10-31,2026-10-31
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-31,1382,1672,138.46,1,1,2026-10-31,2026-10-31
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-31,5723,6753,617.62,10,10,2026-10-31,2026-10-31
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-31,988,1130,124.72,1,1,2026-10-31,2026-10-31
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-31,63,65,7.72,,,2026-10-31,2026-10-31
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-31,15,15,1.08,,,2026-10-31,2026-10-31
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-10-31,234,275,12.74,,,2026-10-31,2026-10-31
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-31,70,97,13.89,,,2026-10-31,2026-10-31
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-31,2,2,0.06,,,2026-10-31,2026-10-31
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-10-31,8272,9781,959.31,23,23,2026-10-31,2026-10-31
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-Constructors,2026-10-31,112,119,7.88,1,,2026-10-31,2026-10-31
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-Constructors,2026-10-31,2194,2510,321.8,3,3,2026-10-31,2026-10-31
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-10-31,592,714,63.74,2,1,2026-10-31,2026-10-31
-"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-10-31,78,81,5.81,,,2026-10-31,2026-10-31
-"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-10-31,264,307,56.4,2,3,2026-10-31,2026-10-31
-"2400 | TTM | Message | Eastern",Eastern-cafe,TTM-Message-Eastern-lookalike,2026-10-31,63,71,5.86,,,2026-10-31,2026-10-31
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop",TTM-Message-Eastern-lookalike,2026-10-31,890,1062,94.92,1,1,2026-10-31,2026-10-31
-"2400 | TTM | Message | Eastern",Eastern-Online,TTM-Message-Eastern-lookalike,2026-10-31,276,292,28.02,,,2026-10-31,2026-10-31
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-lookalike,2026-10-31,343,381,42.83,,,2026-10-31,2026-10-31
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-lookalike,2026-10-31,29,30,2.95,,,2026-10-31,2026-10-31
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-30,596,647,33.46,1,2,2026-10-30,2026-10-30
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-30,1539,1801,145.4,1,1,2026-10-30,2026-10-30
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-30,6307,7386,682.65,10,11,2026-10-30,2026-10-30
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-30,1021,1175,152.95,5,5,2026-10-30,2026-10-30
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-30,50,54,6.56,,,2026-10-30,2026-10-30
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-30,10,10,0.26,,,2026-10-30,2026-10-30
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-10-30,243,265,16.96,,,2026-10-30,2026-10-30
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-30,95,124,13.16,,,2026-10-30,2026-10-30
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-30,5,5,0.13,,,2026-10-30,2026-10-30
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-10-30,9149,10021,1041.91,13,13,2026-10-30,2026-10-30
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-Constructors,2026-10-30,114,134,9.58,,,2026-10-30,2026-10-30
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-Constructors,2026-10-30,2286,2611,335.68,2,2,2026-10-30,2026-10-30
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-10-30,664,750,78.51,1,1,2026-10-30,2026-10-30
-"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-10-30,164,178,16.6,,,2026-10-30,2026-10-30
-"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-10-30,363,412,52.69,2,2,2026-10-30,2026-10-30
-"2400 | TTM | Message | Eastern",Eastern-cafe,TTM-Message-Eastern-lookalike,2026-10-30,55,65,5.41,,,2026-10-30,2026-10-30
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop",TTM-Message-Eastern-lookalike,2026-10-30,740,830,83.07,1,1,2026-10-30,2026-10-30
-"2400 | TTM | Message | Eastern",Eastern-Online,TTM-Message-Eastern-lookalike,2026-10-30,704,838,77.97,,,2026-10-30,2026-10-30
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-lookalike,2026-10-30,391,412,49.61,1,1,2026-10-30,2026-10-30
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-lookalike,2026-10-30,36,39,3.41,,,2026-10-30,2026-10-30
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-29,445,454,24.84,,,2026-10-29,2026-10-29
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-29,2356,2843,206.42,1,3,2026-10-29,2026-10-29
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-29,6591,7458,665.19,6,7,2026-10-29,2026-10-29
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-29,1388,1648,182.42,4,4,2026-10-29,2026-10-29
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-29,48,51,10.09,,,2026-10-29,2026-10-29
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-29,30,30,1.32,,,2026-10-29,2026-10-29
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-10-29,348,396,23.13,,,2026-10-29,2026-10-29
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-29,125,142,14.97,,1,2026-10-29,2026-10-29
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-29,17,17,0.36,,,2026-10-29,2026-10-29
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-10-29,11394,12715,1083.4,16,16,2026-10-29,2026-10-29
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-Constructors,2026-10-29,172,188,7.11,,,2026-10-29,2026-10-29
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-Constructors,2026-10-29,2803,3143,477.6,4,6,2026-10-29,2026-10-29
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-10-29,1200,1402,127.93,,,2026-10-29,2026-10-29
-"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-10-29,293,324,34.24,,,2026-10-29,2026-10-29
-"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-10-29,209,221,27.27,,1,2026-10-29,2026-10-29
-"2400 | TTM | Message | Eastern",Eastern-cafe,TTM-Message-Eastern-lookalike,2026-10-29,86,92,11.21,,,2026-10-29,2026-10-29
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop",TTM-Message-Eastern-lookalike,2026-10-29,631,688,62.31,1,1,2026-10-29,2026-10-29
-"2400 | TTM | Message | Eastern",Eastern-Online,TTM-Message-Eastern-lookalike,2026-10-29,1295,1517,129.05,3,2,2026-10-29,2026-10-29
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-lookalike,2026-10-29,204,221,27.69,1,1,2026-10-29,2026-10-29
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-lookalike,2026-10-29,56,63,6.58,,,2026-10-29,2026-10-29
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-28,503,519,20.81,1,1,2026-10-28,2026-10-28
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-28,1262,1345,137.01,2,3,2026-10-28,2026-10-28
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-28,6760,8417,799.64,9,9,2026-10-28,2026-10-28
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-28,1299,1694,179.35,4,3,2026-10-28,2026-10-28
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-28,41,44,5.87,,,2026-10-28,2026-10-28
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-28,30,32,2.48,,,2026-10-28,2026-10-28
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-10-28,773,854,80.77,3,2,2026-10-28,2026-10-28
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-28,115,149,13.89,2,2,2026-10-28,2026-10-28
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-28,15,18,0.53,,,2026-10-28,2026-10-28
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-10-28,11267,12942,1177.09,23,23,2026-10-28,2026-10-28
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-Constructors,2026-10-28,264,317,22.29,,,2026-10-28,2026-10-28
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-Constructors,2026-10-28,3102,3596,499.43,5,5,2026-10-28,2026-10-28
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-10-28,1064,1304,129.8,1,1,2026-10-28,2026-10-28
-"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-10-28,350,373,26.59,1,1,2026-10-28,2026-10-28
-"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-10-28,145,164,33.67,,,2026-10-28,2026-10-28
-"2400 | TTM | Message | Eastern",Eastern-cafe,TTM-Message-Eastern-lookalike,2026-10-28,97,111,12.38,,,2026-10-28,2026-10-28
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop",TTM-Message-Eastern-lookalike,2026-10-28,995,1147,126.28,3,3,2026-10-28,2026-10-28
-"2400 | TTM | Message | Eastern",Eastern-Online,TTM-Message-Eastern-lookalike,2026-10-28,679,767,62.76,,,2026-10-28,2026-10-28
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-lookalike,2026-10-28,221,239,25.32,,,2026-10-28,2026-10-28
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-lookalike,2026-10-28,166,186,13.68,,,2026-10-28,2026-10-28
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-27,319,347,27.89,,,2026-10-27,2026-10-27
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-27,1478,1710,112.38,,,2026-10-27,2026-10-27
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-27,6168,7560,680.06,8,9,2026-10-27,2026-10-27
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-27,1351,1689,150.38,,,2026-10-27,2026-10-27
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-27,106,124,25.55,,1,2026-10-27,2026-10-27
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-27,36,37,3.31,,,2026-10-27,2026-10-27
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-10-27,713,880,58.41,,,2026-10-27,2026-10-27
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-27,179,222,31.49,,1,2026-10-27,2026-10-27
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-27,32,34,1.13,,,2026-10-27,2026-10-27
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-10-27,11347,12652,926.71,17,18,2026-10-27,2026-10-27
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-Constructors,2026-10-27,592,742,49.88,,,2026-10-27,2026-10-27
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-Constructors,2026-10-27,3160,3856,371.15,6,6,2026-10-27,2026-10-27
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-10-27,963,1242,109.76,,,2026-10-27,2026-10-27
-"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-10-27,182,199,26.45,1,1,2026-10-27,2026-10-27
-"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-10-27,171,190,18.5,,1,2026-10-27,2026-10-27
-"2400 | TTM | Message | Eastern",Eastern-cafe,TTM-Message-Eastern-lookalike,2026-10-27,105,123,12.39,,,2026-10-27,2026-10-27
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop",TTM-Message-Eastern-lookalike,2026-10-27,1110,1290,149.99,5,5,2026-10-27,2026-10-27
-"2400 | TTM | Message | Eastern",Eastern-Online,TTM-Message-Eastern-lookalike,2026-10-27,576,642,43.49,,,2026-10-27,2026-10-27
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-lookalike,2026-10-27,77,82,5.07,,,2026-10-27,2026-10-27
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-lookalike,2026-10-27,226,254,18.43,,,2026-10-27,2026-10-27
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-26,461,522,33.33,,,2026-10-26,2026-10-26
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-26,2732,3648,244.56,4,4,2026-10-26,2026-10-26
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-26,6925,8750,733.12,10,10,2026-10-26,2026-10-26
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-26,1247,1706,194.55,2,3,2026-10-26,2026-10-26
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-26,230,299,35.29,,1,2026-10-26,2026-10-26
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-26,108,147,17.34,1,,2026-10-26,2026-10-26
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-10-26,1048,1586,79.65,,,2026-10-26,2026-10-26
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-26,204,263,26.03,,1,2026-10-26,2026-10-26
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-26,175,254,15.12,,,2026-10-26,2026-10-26
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-10-26,14470,16615,1150.01,14,14,2026-10-26,2026-10-26
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-Constructors,2026-10-26,592,772,50.33,,,2026-10-26,2026-10-26
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-Constructors,2026-10-26,3565,5082,492.61,1,2,2026-10-26,2026-10-26
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-10-26,1085,1356,116.95,1,1,2026-10-26,2026-10-26
-"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-10-26,662,777,61.69,,,2026-10-26,2026-10-26
-"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-10-26,310,352,36.76,,,2026-10-26,2026-10-26
-"2400 | TTM | Message | Eastern",Eastern-cafe,TTM-Message-Eastern-lookalike,2026-10-26,310,384,27.36,1,,2026-10-26,2026-10-26
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop",TTM-Message-Eastern-lookalike,2026-10-26,1046,1285,120.25,,,2026-10-26,2026-10-26
-"2400 | TTM | Message | Eastern",Eastern-Online,TTM-Message-Eastern-lookalike,2026-10-26,674,800,57.64,,,2026-10-26,2026-10-26
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-lookalike,2026-10-26,294,340,21.05,,,2026-10-26,2026-10-26
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-lookalike,2026-10-26,385,512,29.05,,,2026-10-26,2026-10-26
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-25,449,496,31.54,,,2026-10-25,2026-10-25
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-25,1670,2137,165.14,3,5,2026-10-25,2026-10-25
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-25,4928,6121,563.16,10,10,2026-10-25,2026-10-25
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-25,1207,1673,163.44,6,6,2026-10-25,2026-10-25
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-25,171,196,26.47,,,2026-10-25,2026-10-25
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-25,56,62,6.86,,,2026-10-25,2026-10-25
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-10-25,704,1017,67.41,1,2,2026-10-25,2026-10-25
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-25,108,147,12.26,,,2026-10-25,2026-10-25
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-25,77,98,5.93,,,2026-10-25,2026-10-25
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-10-25,9365,11439,869.67,14,14,2026-10-25,2026-10-25
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-Constructors,2026-10-25,468,654,49.72,,,2026-10-25,2026-10-25
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-Constructors,2026-10-25,2787,4188,362.22,2,2,2026-10-25,2026-10-25
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-10-25,945,1246,98.13,1,1,2026-10-25,2026-10-25
-"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-10-25,319,346,30.48,,,2026-10-25,2026-10-25
-"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-10-25,146,160,16.46,,,2026-10-25,2026-10-25
-"2400 | TTM | Message | Eastern",Eastern-cafe,TTM-Message-Eastern-lookalike,2026-10-25,213,306,23.96,,,2026-10-25,2026-10-25
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop",TTM-Message-Eastern-lookalike,2026-10-25,1211,1493,122.53,2,1,2026-10-25,2026-10-25
-"2400 | TTM | Message | Eastern",Eastern-Online,TTM-Message-Eastern-lookalike,2026-10-25,196,217,17.75,1,1,2026-10-25,2026-10-25
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-lookalike,2026-10-25,146,166,12.01,,,2026-10-25,2026-10-25
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-lookalike,2026-10-25,293,372,26.11,,,2026-10-25,2026-10-25
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-24,537,588,38.69,,,2026-10-24,2026-10-24
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-24,1410,1818,152.36,,1,2026-10-24,2026-10-24
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-24,6984,8963,806.03,11,13,2026-10-24,2026-10-24
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-24,1231,1688,182.63,2,3,2026-10-24,2026-10-24
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-24,113,130,35.42,,,2026-10-24,2026-10-24
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-24,62,74,18.33,,,2026-10-24,2026-10-24
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-10-24,623,870,60.46,,,2026-10-24,2026-10-24
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-24,124,152,12.68,,,2026-10-24,2026-10-24
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-24,95,102,7.89,,,2026-10-24,2026-10-24
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-10-24,14056,17559,1215.76,15,17,2026-10-24,2026-10-24
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-Constructors,2026-10-24,595,766,61.64,,,2026-10-24,2026-10-24
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-Constructors,2026-10-24,3417,5188,485.22,2,6,2026-10-24,2026-10-24
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-10-24,1460,1757,168.81,,,2026-10-24,2026-10-24
-"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-10-24,171,193,19.12,1,1,2026-10-24,2026-10-24
-"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-10-24,136,147,20.33,,,2026-10-24,2026-10-24
-"2400 | TTM | Message | Eastern",Eastern-cafe,TTM-Message-Eastern-lookalike,2026-10-24,147,182,21.46,,,2026-10-24,2026-10-24
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop",TTM-Message-Eastern-lookalike,2026-10-24,1374,1613,167.66,2,2,2026-10-24,2026-10-24
-"2400 | TTM | Message | Eastern",Eastern-Online,TTM-Message-Eastern-lookalike,2026-10-24,159,170,17.56,,,2026-10-24,2026-10-24
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-lookalike,2026-10-24,126,135,13.51,,,2026-10-24,2026-10-24
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-lookalike,2026-10-24,261,327,29.61,1,1,2026-10-24,2026-10-24
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-23,515,580,86.84,1,1,2026-10-23,2026-10-23
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-23,1223,1450,143.51,3,4,2026-10-23,2026-10-23
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-23,7283,8919,850.52,15,16,2026-10-23,2026-10-23
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-23,876,1069,113.65,1,1,2026-10-23,2026-10-23
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-23,185,227,31.5,,,2026-10-23,2026-10-23
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-23,107,119,24.9,,,2026-10-23,2026-10-23
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-10-23,457,591,91.97,,,2026-10-23,2026-10-23
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-23,72,90,21.61,,,2026-10-23,2026-10-23
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-23,30,34,2.54,,,2026-10-23,2026-10-23
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-10-23,12476,15414,1241.41,24,25,2026-10-23,2026-10-23
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-Constructors,2026-10-23,700,949,73.85,,,2026-10-23,2026-10-23
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-Constructors,2026-10-23,3143,4272,458.92,6,6,2026-10-23,2026-10-23
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-10-23,1284,1551,159.5,2,2,2026-10-23,2026-10-23
-"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-10-23,293,318,33.19,,,2026-10-23,2026-10-23
-"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-10-23,243,275,26.58,,,2026-10-23,2026-10-23
-"2400 | TTM | Message | Eastern",Eastern-cafe,TTM-Message-Eastern-lookalike,2026-10-23,183,237,24.18,,,2026-10-23,2026-10-23
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop",TTM-Message-Eastern-lookalike,2026-10-23,956,1142,154.39,,,2026-10-23,2026-10-23
-"2400 | TTM | Message | Eastern",Eastern-Online,TTM-Message-Eastern-lookalike,2026-10-23,400,438,32.26,,,2026-10-23,2026-10-23
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-lookalike,2026-10-23,342,390,41.43,,,2026-10-23,2026-10-23
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-lookalike,2026-10-23,194,222,29.09,,,2026-10-23,2026-10-23
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-22,550,608,46.37,,,2026-10-22,2026-10-22
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-22,1115,1271,134.93,3,5,2026-10-22,2026-10-22
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-22,6533,8260,844.97,13,13,2026-10-22,2026-10-22
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-22,1866,2249,224.01,1,1,2026-10-22,2026-10-22
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-22,110,126,10.21,,,2026-10-22,2026-10-22
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-22,127,159,26.55,,,2026-10-22,2026-10-22
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-10-22,433,564,98.09,,,2026-10-22,2026-10-22
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-22,69,77,10.44,,,2026-10-22,2026-10-22
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-22,59,66,7.51,,,2026-10-22,2026-10-22
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-10-22,9315,11321,1057.89,13,15,2026-10-22,2026-10-22
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-Constructors,2026-10-22,397,539,84.34,1,1,2026-10-22,2026-10-22
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-Constructors,2026-10-22,2769,3624,404.38,4,4,2026-10-22,2026-10-22
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-10-22,1349,1611,165.47,2,2,2026-10-22,2026-10-22
-"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-10-22,122,126,12.61,,,2026-10-22,2026-10-22
-"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-10-22,119,129,33.98,,,2026-10-22,2026-10-22
-"2400 | TTM | Message | Eastern",Eastern-cafe,TTM-Message-Eastern-lookalike,2026-10-22,154,173,33.74,,,2026-10-22,2026-10-22
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop",TTM-Message-Eastern-lookalike,2026-10-22,843,969,146.42,,,2026-10-22,2026-10-22
-"2400 | TTM | Message | Eastern",Eastern-Online,TTM-Message-Eastern-lookalike,2026-10-22,692,817,66.1,,,2026-10-22,2026-10-22
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-lookalike,2026-10-22,166,184,19.43,,,2026-10-22,2026-10-22
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-lookalike,2026-10-22,42,43,3.77,1,1,2026-10-22,2026-10-22
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-21,446,476,68.1,1,1,2026-10-21,2026-10-21
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-21,791,911,63.59,3,2,2026-10-21,2026-10-21
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-21,6252,7648,756.34,8,10,2026-10-21,2026-10-21
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-21,1269,1530,179.12,3,3,2026-10-21,2026-10-21
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-21,131,156,36.48,,,2026-10-21,2026-10-21
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-21,29,31,6.37,,,2026-10-21,2026-10-21
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-10-21,581,756,69.32,1,,2026-10-21,2026-10-21
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-21,30,36,3.57,,,2026-10-21,2026-10-21
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-21,14,14,0.74,,,2026-10-21,2026-10-21
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-10-21,9843,12171,1087.25,14,13,2026-10-21,2026-10-21
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-Constructors,2026-10-21,367,468,49.97,1,1,2026-10-21,2026-10-21
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-Constructors,2026-10-21,2689,3811,456.88,2,4,2026-10-21,2026-10-21
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-10-21,1171,1378,134.29,3,3,2026-10-21,2026-10-21
-"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-10-21,183,186,22.11,,,2026-10-21,2026-10-21
-"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-10-21,124,131,19.1,,,2026-10-21,2026-10-21
-"2400 | TTM | Message | Eastern",Eastern-cafe,TTM-Message-Eastern-lookalike,2026-10-21,73,84,15.19,,,2026-10-21,2026-10-21
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop",TTM-Message-Eastern-lookalike,2026-10-21,604,647,77.47,,,2026-10-21,2026-10-21
-"2400 | TTM | Message | Eastern",Eastern-Online,TTM-Message-Eastern-lookalike,2026-10-21,1177,1397,153.09,2,2,2026-10-21,2026-10-21
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-lookalike,2026-10-21,51,54,12.03,,,2026-10-21,2026-10-21
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-lookalike,2026-10-21,14,14,0.67,,,2026-10-21,2026-10-21
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-20,354,379,33.86,1,1,2026-10-20,2026-10-20
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-20,1059,1172,78.91,,,2026-10-20,2026-10-20
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-20,8426,10092,927.65,14,14,2026-10-20,2026-10-20
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-20,1232,1421,222.19,2,2,2026-10-20,2026-10-20
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-20,164,186,35.93,,,2026-10-20,2026-10-20
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-20,51,59,9.46,,,2026-10-20,2026-10-20
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-10-20,517,672,53.95,,,2026-10-20,2026-10-20
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-20,11,15,1.72,,,2026-10-20,2026-10-20
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-20,33,42,5.32,,,2026-10-20,2026-10-20
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-10-20,10880,12310,1234.16,15,17,2026-10-20,2026-10-20
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-Constructors,2026-10-20,223,272,39.49,,,2026-10-20,2026-10-20
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-Constructors,2026-10-20,3494,4406,522.68,2,5,2026-10-20,2026-10-20
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-10-20,1288,1501,146,3,3,2026-10-20,2026-10-20
-"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-10-20,292,329,43.66,,2,2026-10-20,2026-10-20
-"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-10-20,178,189,30.62,,,2026-10-20,2026-10-20
-"2400 | TTM | Message | Eastern",Eastern-cafe,TTM-Message-Eastern-lookalike,2026-10-20,90,95,12.32,,,2026-10-20,2026-10-20
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop",TTM-Message-Eastern-lookalike,2026-10-20,347,364,44.96,1,1,2026-10-20,2026-10-20
-"2400 | TTM | Message | Eastern",Eastern-Online,TTM-Message-Eastern-lookalike,2026-10-20,1921,2258,226.64,,,2026-10-20,2026-10-20
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-lookalike,2026-10-20,49,54,5.51,,,2026-10-20,2026-10-20
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-lookalike,2026-10-20,41,43,5.14,,,2026-10-20,2026-10-20
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-19,483,536,34.56,,,2026-10-19,2026-10-19
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-19,1617,1843,183.39,,1,2026-10-19,2026-10-19
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-19,5935,7197,658.95,10,11,2026-10-19,2026-10-19
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-19,1258,1494,156.81,2,2,2026-10-19,2026-10-19
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-19,201,230,49.48,,,2026-10-19,2026-10-19
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-19,69,79,26.79,,,2026-10-19,2026-10-19
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-10-19,792,1101,103.72,1,,2026-10-19,2026-10-19
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-19,45,57,3.84,,,2026-10-19,2026-10-19
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-19,18,24,2.13,,,2026-10-19,2026-10-19
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-10-19,9013,10997,1009.07,14,14,2026-10-19,2026-10-19
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-Constructors,2026-10-19,279,337,32.82,,,2026-10-19,2026-10-19
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-Constructors,2026-10-19,3102,3912,459.34,2,3,2026-10-19,2026-10-19
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-10-19,543,598,46.81,1,1,2026-10-19,2026-10-19
-"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-10-19,828,972,98.09,1,1,2026-10-19,2026-10-19
-"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-10-19,247,265,39.69,1,1,2026-10-19,2026-10-19
-"2400 | TTM | Message | Eastern",Eastern-cafe,TTM-Message-Eastern-lookalike,2026-10-19,90,95,11.05,,,2026-10-19,2026-10-19
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop",TTM-Message-Eastern-lookalike,2026-10-19,110,116,12.84,,,2026-10-19,2026-10-19
-"2400 | TTM | Message | Eastern",Eastern-Online,TTM-Message-Eastern-lookalike,2026-10-19,1202,1422,138.56,2,2,2026-10-19,2026-10-19
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-lookalike,2026-10-19,73,84,6.46,,,2026-10-19,2026-10-19
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-lookalike,2026-10-19,105,121,15.34,,,2026-10-19,2026-10-19
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-18,490,533,51.05,1,1,2026-10-18,2026-10-18
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-18,1006,1087,78.82,1,2,2026-10-18,2026-10-18
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-18,6917,8903,785.32,6,5,2026-10-18,2026-10-18
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-18,1152,1377,147.32,2,2,2026-10-18,2026-10-18
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-18,222,264,37.06,,,2026-10-18,2026-10-18
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-18,89,96,14.86,,,2026-10-18,2026-10-18
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-10-18,807,1037,106.53,1,1,2026-10-18,2026-10-18
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-18,36,41,9.04,,,2026-10-18,2026-10-18
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-18,43,51,6.25,1,,2026-10-18,2026-10-18
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-10-18,8905,10405,1017.69,13,14,2026-10-18,2026-10-18
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-Constructors,2026-10-18,293,358,43.9,1,,2026-10-18,2026-10-18
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-Constructors,2026-10-18,2705,3363,427.18,3,3,2026-10-18,2026-10-18
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-10-18,459,516,61.9,,,2026-10-18,2026-10-18
-"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-10-18,457,503,71.38,,,2026-10-18,2026-10-18
-"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-10-18,206,232,26.31,,,2026-10-18,2026-10-18
-"2400 | TTM | Message | Eastern",Eastern-cafe,TTM-Message-Eastern-lookalike,2026-10-18,109,119,12.42,,,2026-10-18,2026-10-18
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop",TTM-Message-Eastern-lookalike,2026-10-18,129,146,14.26,,,2026-10-18,2026-10-18
-"2400 | TTM | Message | Eastern",Eastern-Online,TTM-Message-Eastern-lookalike,2026-10-18,1326,1600,164.24,2,2,2026-10-18,2026-10-18
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-lookalike,2026-10-18,139,152,16.14,,,2026-10-18,2026-10-18
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-lookalike,2026-10-18,141,149,16.87,,,2026-10-18,2026-10-18
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-17,492,532,37.15,,,2026-10-17,2026-10-17
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-17,1063,1186,119.58,3,3,2026-10-17,2026-10-17
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-17,7817,9354,801.62,12,11,2026-10-17,2026-10-17
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-17,1260,1499,165.1,2,2,2026-10-17,2026-10-17
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-17,232,264,50.86,,,2026-10-17,2026-10-17
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-17,39,42,12,,,2026-10-17,2026-10-17
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-10-17,800,955,118.69,1,1,2026-10-17,2026-10-17
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-17,58,61,5,,,2026-10-17,2026-10-17
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-17,125,147,15.76,,,2026-10-17,2026-10-17
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-10-17,8561,10178,1103.55,14,15,2026-10-17,2026-10-17
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-Constructors,2026-10-17,393,472,37.04,,,2026-10-17,2026-10-17
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-Constructors,2026-10-17,2789,3619,501.77,3,3,2026-10-17,2026-10-17
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-10-17,434,475,48.56,1,1,2026-10-17,2026-10-17
-"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-10-17,792,920,105.71,,,2026-10-17,2026-10-17
-"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-10-17,310,334,29.95,,,2026-10-17,2026-10-17
-"2400 | TTM | Message | Eastern",Eastern-cafe,TTM-Message-Eastern-lookalike,2026-10-17,71,77,7.73,,,2026-10-17,2026-10-17
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop",TTM-Message-Eastern-lookalike,2026-10-17,157,165,16.86,,,2026-10-17,2026-10-17
-"2400 | TTM | Message | Eastern",Eastern-Online,TTM-Message-Eastern-lookalike,2026-10-17,1744,2009,202.78,,,2026-10-17,2026-10-17
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-lookalike,2026-10-17,120,127,7.92,1,1,2026-10-17,2026-10-17
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-lookalike,2026-10-17,166,174,14.39,,,2026-10-17,2026-10-17
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-16,208,225,14.24,1,1,2026-10-16,2026-10-16
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-16,638,715,104.93,,,2026-10-16,2026-10-16
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-16,9355,11229,889.04,26,27,2026-10-16,2026-10-16
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-16,1432,1660,216.24,3,2,2026-10-16,2026-10-16
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-16,92,99,42.52,,,2026-10-16,2026-10-16
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-16,14,15,3.63,,,2026-10-16,2026-10-16
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-10-16,615,692,49.49,,,2026-10-16,2026-10-16
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-16,49,57,8.58,,,2026-10-16,2026-10-16
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-16,33,36,3.45,,,2026-10-16,2026-10-16
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-10-16,11252,12548,1179.69,15,14,2026-10-16,2026-10-16
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-Constructors,2026-10-16,337,340,37.06,,,2026-10-16,2026-10-16
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-Constructors,2026-10-16,3869,4465,509.69,2,4,2026-10-16,2026-10-16
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-10-16,560,608,49.3,,,2026-10-16,2026-10-16
-"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-10-16,861,959,111.2,1,1,2026-10-16,2026-10-16
-"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-10-16,386,431,50.65,1,1,2026-10-16,2026-10-16
-"2400 | TTM | Message | Eastern",Eastern-cafe,TTM-Message-Eastern-lookalike,2026-10-16,186,196,19.18,,,2026-10-16,2026-10-16
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop",TTM-Message-Eastern-lookalike,2026-10-16,236,253,21.81,,,2026-10-16,2026-10-16
-"2400 | TTM | Message | Eastern",Eastern-Online,TTM-Message-Eastern-lookalike,2026-10-16,1648,1936,197.93,4,4,2026-10-16,2026-10-16
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-lookalike,2026-10-16,210,218,14.28,,,2026-10-16,2026-10-16
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-lookalike,2026-10-16,486,529,42.03,,,2026-10-16,2026-10-16
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-15,152,156,13.3,,,2026-10-15,2026-10-15
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-15,143,150,25.55,,,2026-10-15,2026-10-15
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-15,6924,8170,799,13,16,2026-10-15,2026-10-15
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-15,1491,1864,217.61,2,2,2026-10-15,2026-10-15
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-15,23,23,3.73,,,2026-10-15,2026-10-15
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-15,11,12,2.38,,,2026-10-15,2026-10-15
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-10-15,296,326,30.29,1,1,2026-10-15,2026-10-15
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-15,21,22,1.38,,,2026-10-15,2026-10-15
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-15,19,23,1.2,,,2026-10-15,2026-10-15
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-10-15,9565,10589,1038.29,13,15,2026-10-15,2026-10-15
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-Constructors,2026-10-15,215,233,32.9,,,2026-10-15,2026-10-15
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-Constructors,2026-10-15,3631,4376,498.79,6,8,2026-10-15,2026-10-15
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-10-15,1003,1144,95.34,1,1,2026-10-15,2026-10-15
-"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-10-15,239,256,38.15,,,2026-10-15,2026-10-15
-"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-10-15,172,191,27.68,,,2026-10-15,2026-10-15
-"2400 | TTM | Message | Eastern",Eastern-cafe,TTM-Message-Eastern-lookalike,2026-10-15,312,321,28.06,,,2026-10-15,2026-10-15
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop",TTM-Message-Eastern-lookalike,2026-10-15,312,312,33.31,,,2026-10-15,2026-10-15
-"2400 | TTM | Message | Eastern",Eastern-Online,TTM-Message-Eastern-lookalike,2026-10-15,649,657,55.85,1,1,2026-10-15,2026-10-15
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-lookalike,2026-10-15,228,232,13.9,,,2026-10-15,2026-10-15
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-lookalike,2026-10-15,50,51,3.14,,,2026-10-15,2026-10-15
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-14,213,224,11.86,,,2026-10-14,2026-10-14
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-14,46,47,2.67,,,2026-10-14,2026-10-14
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-14,3137,3954,472.1,5,6,2026-10-14,2026-10-14
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-14,804,927,125.79,1,1,2026-10-14,2026-10-14
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-14,14,14,4.42,,,2026-10-14,2026-10-14
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-14,17,18,1.81,,,2026-10-14,2026-10-14
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-10-14,434,482,32.22,,1,2026-10-14,2026-10-14
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-14,37,42,6.97,,,2026-10-14,2026-10-14
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-14,10,11,0.74,,,2026-10-14,2026-10-14
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-10-14,4690,5305,586.33,11,13,2026-10-14,2026-10-14
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-Constructors,2026-10-14,333,388,25.01,,,2026-10-14,2026-10-14
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-Constructors,2026-10-14,2699,3233,424.54,7,9,2026-10-14,2026-10-14
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-10-14,693,781,83.54,1,1,2026-10-14,2026-10-14
-"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-10-14,199,209,24.2,,,2026-10-14,2026-10-14
-"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-10-14,34,35,2.6,,,2026-10-14,2026-10-14
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-13,326,353,25.06,,,2026-10-13,2026-10-13
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-13,67,71,13.32,,,2026-10-13,2026-10-13
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-13,3284,4131,454.15,8,7,2026-10-13,2026-10-13
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-13,704,906,111.32,1,1,2026-10-13,2026-10-13
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-13,8,10,2,,,2026-10-13,2026-10-13
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-13,74,82,10.74,,,2026-10-13,2026-10-13
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-10-13,1328,1586,163.22,2,3,2026-10-13,2026-10-13
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-13,155,180,17.27,,,2026-10-13,2026-10-13
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-13,24,26,1.77,,,2026-10-13,2026-10-13
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-10-13,5023,5655,532.41,7,8,2026-10-13,2026-10-13
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-Constructors,2026-10-13,1028,1193,75.55,,,2026-10-13,2026-10-13
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-Constructors,2026-10-13,1820,2142,368.99,,4,2026-10-13,2026-10-13
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-10-13,561,658,76.15,2,2,2026-10-13,2026-10-13
-"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-10-13,123,127,21.31,,1,2026-10-13,2026-10-13
-"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-10-13,19,22,3.04,,,2026-10-13,2026-10-13
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-12,649,683,56.09,,,2026-10-12,2026-10-12
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-12,111,115,7.35,,,2026-10-12,2026-10-12
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-12,3930,4820,525.1,6,7,2026-10-12,2026-10-12
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-12,488,581,106.35,2,2,2026-10-12,2026-10-12
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-12,55,62,8.37,,,2026-10-12,2026-10-12
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-12,160,175,26.33,,,2026-10-12,2026-10-12
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-10-12,918,1035,96.2,2,2,2026-10-12,2026-10-12
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-12,111,131,12.71,1,1,2026-10-12,2026-10-12
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-12,124,137,15.03,,,2026-10-12,2026-10-12
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-10-12,6240,7134,735.87,11,12,2026-10-12,2026-10-12
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-Constructors,2026-10-12,1634,1998,291.9,1,3,2026-10-12,2026-10-12
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-Constructors,2026-10-12,1619,2045,220.61,5,6,2026-10-12,2026-10-12
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-10-12,711,787,99.97,,,2026-10-12,2026-10-12
-"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-10-12,171,180,25.87,,,2026-10-12,2026-10-12
-"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-10-12,61,68,6.8,,,2026-10-12,2026-10-12
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-11,631,738,66.75,1,1,2026-10-11,2026-10-11
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-11,47,47,5.47,,,2026-10-11,2026-10-11
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-11,3537,4240,463.32,7,9,2026-10-11,2026-10-11
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-11,448,525,89.24,,,2026-10-11,2026-10-11
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-11,3,3,0.7,,,2026-10-11,2026-10-11
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-11,82,91,8.12,,,2026-10-11,2026-10-11
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-10-11,826,961,124.09,1,1,2026-10-11,2026-10-11
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-11,171,189,15.65,,1,2026-10-11,2026-10-11
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-11,36,39,2.58,,,2026-10-11,2026-10-11
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-10-11,5281,6543,525.9,5,4,2026-10-11,2026-10-11
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-Constructors,2026-10-11,1808,2500,216.78,2,2,2026-10-11,2026-10-11
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-Constructors,2026-10-11,1205,1538,197.13,,1,2026-10-11,2026-10-11
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-10-11,692,758,81.9,1,,2026-10-11,2026-10-11
-"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-10-11,176,185,18.38,1,1,2026-10-11,2026-10-11
-"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-10-11,19,20,2.15,,,2026-10-11,2026-10-11
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-10,813,896,79.83,2,2,2026-10-10,2026-10-10
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-10,50,52,6.91,,,2026-10-10,2026-10-10
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-10,3521,4610,499.25,8,8,2026-10-10,2026-10-10
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-10,832,1056,127.64,,,2026-10-10,2026-10-10
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-10,10,10,0.41,,,2026-10-10,2026-10-10
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-10,2,2,0.79,,,2026-10-10,2026-10-10
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-10-10,809,941,87.56,,,2026-10-10,2026-10-10
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-10,10,11,1.03,,,2026-10-10,2026-10-10
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-10,137,150,11.34,,,2026-10-10,2026-10-10
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-10-10,6097,7741,673.76,4,5,2026-10-10,2026-10-10
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-Constructors,2026-10-10,2869,3812,315.3,2,2,2026-10-10,2026-10-10
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-Constructors,2026-10-10,925,1169,152.9,,1,2026-10-10,2026-10-10
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-10-10,832,948,90.12,1,1,2026-10-10,2026-10-10
-"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-10-10,144,158,17.86,,,2026-10-10,2026-10-10
-"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-10-10,86,105,12.99,,1,2026-10-10,2026-10-10
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-09,556,600,41.08,,,2026-10-09,2026-10-09
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-09,110,120,12.52,,,2026-10-09,2026-10-09
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-09,3073,3687,366.42,4,5,2026-10-09,2026-10-09
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-09,716,898,93.28,,,2026-10-09,2026-10-09
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-09,34,40,4.2,,,2026-10-09,2026-10-09
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-09,36,44,4.84,,,2026-10-09,2026-10-09
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-10-09,672,727,58.45,,,2026-10-09,2026-10-09
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-09,41,45,3.64,,,2026-10-09,2026-10-09
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-09,28,31,3.12,,,2026-10-09,2026-10-09
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-10-09,4849,6118,480.18,3,4,2026-10-09,2026-10-09
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-Constructors,2026-10-09,1909,2511,216.72,3,3,2026-10-09,2026-10-09
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-Constructors,2026-10-09,1095,1363,153.61,1,2,2026-10-09,2026-10-09
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-10-09,381,440,43.76,,,2026-10-09,2026-10-09
-"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-10-09,214,231,31.21,,,2026-10-09,2026-10-09
-"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-10-09,84,92,10.17,,,2026-10-09,2026-10-09
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-08,1309,1504,113.1,5,4,2026-10-08,2026-10-08
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-08,180,198,13.1,,,2026-10-08,2026-10-08
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-08,2850,3484,300.99,7,6,2026-10-08,2026-10-08
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-08,471,620,71.58,1,1,2026-10-08,2026-10-08
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-08,117,159,15.13,,,2026-10-08,2026-10-08
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-08,65,76,6.13,,,2026-10-08,2026-10-08
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-10-08,823,914,61.17,1,2,2026-10-08,2026-10-08
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-08,112,160,11.06,,,2026-10-08,2026-10-08
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-08,67,87,5.88,,,2026-10-08,2026-10-08
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-10-08,5283,6881,431.13,5,4,2026-10-08,2026-10-08
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-Constructors,2026-10-08,1571,1924,154.38,1,1,2026-10-08,2026-10-08
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-Constructors,2026-10-08,2634,2958,292.91,1,2,2026-10-08,2026-10-08
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-10-08,654,719,70.31,1,1,2026-10-08,2026-10-08
-"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-10-08,263,288,25.31,,,2026-10-08,2026-10-08
-"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-10-08,60,63,3.89,,,2026-10-08,2026-10-08
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-07,1279,1407,101.31,3,5,2026-10-07,2026-10-07
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-07,215,225,19.35,,,2026-10-07,2026-10-07
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-07,3107,3833,343.03,6,6,2026-10-07,2026-10-07
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-07,324,413,44.37,1,1,2026-10-07,2026-10-07
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-07,146,165,14.2,,,2026-10-07,2026-10-07
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-07,368,425,50.03,3,2,2026-10-07,2026-10-07
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-10-07,953,1048,84.01,2,1,2026-10-07,2026-10-07
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-07,102,122,9.64,,,2026-10-07,2026-10-07
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-07,65,77,5.54,,,2026-10-07,2026-10-07
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-10-07,5913,7677,454.95,6,5,2026-10-07,2026-10-07
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-Constructors,2026-10-07,1847,2254,175.49,,1,2026-10-07,2026-10-07
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-Constructors,2026-10-07,2117,2673,235.03,,,2026-10-07,2026-10-07
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-10-07,461,588,51.23,1,1,2026-10-07,2026-10-07
-"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-10-07,344,381,46.65,1,1,2026-10-07,2026-10-07
-"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-10-07,29,33,2.68,,,2026-10-07,2026-10-07
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-06,820,903,64.96,2,2,2026-10-06,2026-10-06
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-06,144,156,8.96,,,2026-10-06,2026-10-06
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-10-06,1560,1871,168.63,2,2,2026-10-06,2026-10-06
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-06,54,63,7.22,,,2026-10-06,2026-10-06
-"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-10-06,38,41,4.74,,,2026-10-06,2026-10-06
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-06,484,562,49.03,2,2,2026-10-06,2026-10-06
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-10-06,302,330,20.85,,,2026-10-06,2026-10-06
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-06,13,14,0.49,,,2026-10-06,2026-10-06
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-10-06,50,55,5.31,,,2026-10-06,2026-10-06
-"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-10-06,3910,4887,337.26,6,5,2026-10-06,2026-10-06
-"2400 | TTM | Message | Eastern","Eastern-constructor 02",TTM-Message-Eastern-Constructors,2026-10-06,374,439,27.16,,,2026-10-06,2026-10-06
-"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-Constructors,2026-10-06,1571,1932,180.6,1,1,2026-10-06,2026-10-06
-"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-10-06,196,230,21.49,,,2026-10-06,2026-10-06
-"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-10-06,170,192,18.2,,,2026-10-06,2026-10-06
-"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-10-06,29,29,3.29,,,2026-10-06,2026-10-06
+"2400 | TTM | Awareness | BKK","awareness - BKK","TTM | Awareness | BKK",2026-11-23,35133,48263,325.81,,,2026-11-23,2026-11-23
+"2400 | TTM | Awareness | Eastern","awareness - Eastern","TTM | Awareness | Eastern",2026-11-23,29737,40581,257.13,,,2026-11-23,2026-11-23
+"2400 | TTM | Lead Gen | Eastern","Eastern- Merchant - Nov","TTM | Lead Gen | Eastern-Business Owner/SME",2026-11-23,2305,2588,191.05,,,2026-11-23,2026-11-23
+"2400 | TTM | Lead Gen | Eastern","Eastern-constructor - Nov","TTM | Lead Gen | Eastern-Eastern-Constructors",2026-11-23,6362,7044,452.51,1,1,2026-11-23,2026-11-23
+"2400 | TTM | Lead Gen | BKK","Eastern- Merchant - Nov","TTM | Lead Gen | BKK-lookalike",2026-11-23,1998,2144,157.61,,4,2026-11-23,2026-11-23
+"2400 | TTM | Lead Gen | BKK","Eastern-constructor - Nov","TTM | Lead Gen | BKK-Constructors",2026-11-23,4367,5037,391.4,,9,2026-11-23,2026-11-23
+"2400 | TTM | Lead Gen | BKK","Eastern- Merchant - Nov","TTM | Lead Gen | BKK-Business Owner/SME",2026-11-23,3077,3430,218.61,,2,2026-11-23,2026-11-23
+"2400 | TTM | Lead Gen | BKK","Eastern-constructor - Nov","TTM | Lead Gen | BKK-lookalike",2026-11-23,990,1065,103.88,,,2026-11-23,2026-11-23
+"2400 | TTM | Lead Gen | Eastern",test,"TTM | Lead Gen | Eastern-lookalike",2026-11-23,651,659,54.79,1,1,2026-11-23,2026-11-23
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-11-19,0,0,0,1,1,2026-11-19,2026-11-19
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-11-18,0,0,0,1,1,2026-11-18,2026-11-18
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-17,0,0,0,1,1,2026-11-17,2026-11-17
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-16,6,7,0.45,,,2026-11-16,2026-11-16
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-16,10,11,4.5,,,2026-11-16,2026-11-16
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-16,225,254,28.95,,,2026-11-16,2026-11-16
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-11-16,244,275,23.05,1,1,2026-11-16,2026-11-16
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-11-16,21,24,1.64,,,2026-11-16,2026-11-16
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-11-16,31,36,5.59,,,2026-11-16,2026-11-16
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-11-16,53,64,3.84,,,2026-11-16,2026-11-16
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-11-16,11,11,0.96,,,2026-11-16,2026-11-16
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-11-16,6,6,0.12,,,2026-11-16,2026-11-16
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-11-16,929,1024,97.26,3,3,2026-11-16,2026-11-16
+"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-11-16,240,264,18.69,1,1,2026-11-16,2026-11-16
+"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-11-16,15,17,2.14,,,2026-11-16,2026-11-16
+"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-11-16,86,90,6.27,1,1,2026-11-16,2026-11-16
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-15,125,133,46.07,,,2026-11-15,2026-11-15
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-15,129,136,7.48,,,2026-11-15,2026-11-15
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-15,1330,1548,164.79,4,4,2026-11-15,2026-11-15
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-11-15,1406,1783,190.15,4,4,2026-11-15,2026-11-15
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-11-15,74,77,9.09,,,2026-11-15,2026-11-15
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-11-15,73,79,12.57,1,,2026-11-15,2026-11-15
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-11-15,417,550,107.71,,1,2026-11-15,2026-11-15
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-11-15,85,95,32.67,,2,2026-11-15,2026-11-15
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-11-15,15,17,2.68,1,1,2026-11-15,2026-11-15
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-11-15,5351,6173,565.44,17,17,2026-11-15,2026-11-15
+"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-11-15,1000,1228,135.68,3,4,2026-11-15,2026-11-15
+"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-11-15,155,163,10.28,,,2026-11-15,2026-11-15
+"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-11-15,696,784,82.84,2,3,2026-11-15,2026-11-15
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-14,142,153,22.99,,,2026-11-14,2026-11-14
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-14,109,122,7.64,1,1,2026-11-14,2026-11-14
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-14,1682,1984,203.31,1,1,2026-11-14,2026-11-14
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-11-14,1203,1485,159.29,2,3,2026-11-14,2026-11-14
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-11-14,121,138,14.96,,,2026-11-14,2026-11-14
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-11-14,44,50,20.87,,1,2026-11-14,2026-11-14
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-11-14,377,486,75.12,,,2026-11-14,2026-11-14
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-11-14,63,82,12.8,,,2026-11-14,2026-11-14
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-11-14,21,22,0.87,,,2026-11-14,2026-11-14
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-11-14,5001,5793,616.36,9,9,2026-11-14,2026-11-14
+"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-11-14,1416,1751,161.92,4,6,2026-11-14,2026-11-14
+"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-11-14,88,94,15.1,,,2026-11-14,2026-11-14
+"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-11-14,412,455,53.8,1,2,2026-11-14,2026-11-14
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-13,169,186,30.25,,1,2026-11-13,2026-11-13
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-13,188,199,24.46,,2,2026-11-13,2026-11-13
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-13,1533,1801,181.62,1,2,2026-11-13,2026-11-13
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-11-13,1038,1320,177.66,3,4,2026-11-13,2026-11-13
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-11-13,89,107,21.32,,,2026-11-13,2026-11-13
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-11-13,17,20,2.2,,,2026-11-13,2026-11-13
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-11-13,319,387,62.83,,2,2026-11-13,2026-11-13
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-11-13,43,47,23.99,1,1,2026-11-13,2026-11-13
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-11-13,15,16,1.85,,,2026-11-13,2026-11-13
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-11-13,4903,5523,585.4,11,12,2026-11-13,2026-11-13
+"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-11-13,716,802,69.15,1,3,2026-11-13,2026-11-13
+"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-11-13,128,158,27.48,,,2026-11-13,2026-11-13
+"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-11-13,870,1017,151.55,2,3,2026-11-13,2026-11-13
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-12,107,112,8.99,,,2026-11-12,2026-11-12
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-12,126,139,65.54,,1,2026-11-12,2026-11-12
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-12,1328,1568,180.29,6,6,2026-11-12,2026-11-12
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-11-12,1266,1541,224.69,5,5,2026-11-12,2026-11-12
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-11-12,61,69,3.44,,,2026-11-12,2026-11-12
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-11-12,21,21,3.31,,,2026-11-12,2026-11-12
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-11-12,139,166,8.6,,,2026-11-12,2026-11-12
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-11-12,44,64,7.61,,,2026-11-12,2026-11-12
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-11-12,5,6,0.13,,,2026-11-12,2026-11-12
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-11-12,6199,6848,654.9,7,7,2026-11-12,2026-11-12
+"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-11-12,604,737,72.66,3,3,2026-11-12,2026-11-12
+"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-11-12,171,196,26.61,,,2026-11-12,2026-11-12
+"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-11-12,1031,1168,133.43,3,3,2026-11-12,2026-11-12
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-11,111,119,8.82,,,2026-11-11,2026-11-11
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-11,119,127,48.43,1,1,2026-11-11,2026-11-11
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-11,1136,1344,175.87,2,3,2026-11-11,2026-11-11
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-11-11,831,1067,170.62,4,5,2026-11-11,2026-11-11
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-11-11,71,81,10.45,,,2026-11-11,2026-11-11
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-11-11,17,20,2.24,,,2026-11-11,2026-11-11
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-11-11,84,92,19.38,1,1,2026-11-11,2026-11-11
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-11-11,41,52,8.21,,,2026-11-11,2026-11-11
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-11-11,10,10,1.24,,,2026-11-11,2026-11-11
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-11-11,4536,5021,562.83,12,11,2026-11-11,2026-11-11
+"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-11-11,285,331,37.61,3,2,2026-11-11,2026-11-11
+"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-11-11,134,142,26.59,,,2026-11-11,2026-11-11
+"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-11-11,792,909,166.21,,1,2026-11-11,2026-11-11
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-10,160,170,6.73,1,,2026-11-10,2026-11-10
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-10,119,127,9.89,2,1,2026-11-10,2026-11-10
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-10,1442,1718,175.51,4,2,2026-11-10,2026-11-10
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-11-10,942,1138,164.89,3,2,2026-11-10,2026-11-10
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-11-10,123,139,16.23,1,,2026-11-10,2026-11-10
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-11-10,18,18,3.58,,,2026-11-10,2026-11-10
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-11-10,54,60,5.43,,,2026-11-10,2026-11-10
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-11-10,70,87,11.5,,,2026-11-10,2026-11-10
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-11-10,24,25,0.9,,,2026-11-10,2026-11-10
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-11-10,4457,4903,600.71,9,12,2026-11-10,2026-11-10
+"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-11-10,380,439,49.07,4,3,2026-11-10,2026-11-10
+"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-11-10,105,115,9.83,,,2026-11-10,2026-11-10
+"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-11-10,695,838,151.5,1,2,2026-11-10,2026-11-10
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-09,142,149,9.1,1,1,2026-11-09,2026-11-09
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-09,283,299,28.86,,,2026-11-09,2026-11-09
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-09,1730,2162,221,4,3,2026-11-09,2026-11-09
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-11-09,1198,1516,200.96,1,2,2026-11-09,2026-11-09
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-11-09,109,117,22.93,,,2026-11-09,2026-11-09
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-11-09,20,21,4.01,,,2026-11-09,2026-11-09
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-11-09,60,64,3.61,,,2026-11-09,2026-11-09
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-11-09,132,142,17.07,,,2026-11-09,2026-11-09
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-11-09,22,23,0.86,,,2026-11-09,2026-11-09
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-11-09,5661,5991,649.8,9,10,2026-11-09,2026-11-09
+"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-11-09,279,333,28.81,1,1,2026-11-09,2026-11-09
+"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-11-09,210,233,13.14,,,2026-11-09,2026-11-09
+"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-11-09,1493,1794,201.51,4,5,2026-11-09,2026-11-09
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-08,317,328,14.83,1,1,2026-11-08,2026-11-08
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-08,613,654,76.17,,,2026-11-08,2026-11-08
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-08,1578,1835,150.28,2,2,2026-11-08,2026-11-08
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-11-08,983,1205,151.49,1,1,2026-11-08,2026-11-08
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-11-08,270,301,35.24,1,1,2026-11-08,2026-11-08
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-11-08,41,45,4.84,,,2026-11-08,2026-11-08
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-11-08,143,154,6.46,,,2026-11-08,2026-11-08
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-11-08,248,285,37.53,1,1,2026-11-08,2026-11-08
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-11-08,51,55,5.84,,,2026-11-08,2026-11-08
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-11-08,5688,6336,621.22,13,13,2026-11-08,2026-11-08
+"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-11-08,347,377,38.14,2,2,2026-11-08,2026-11-08
+"2400 | TTM | Message | Eastern",Eastern-Online,"TTM-Message-Eastern-Business Owner/SME",2026-11-08,284,330,22.3,,,2026-11-08,2026-11-08
+"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-11-08,1124,1352,151.4,,,2026-11-08,2026-11-08
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-07,620,698,66.05,,1,2026-11-07,2026-11-07
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-07,1601,1864,187.1,3,2,2026-11-07,2026-11-07
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-11-07,375,402,48.21,3,3,2026-11-07,2026-11-07
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-11-07,495,579,48.77,1,2,2026-11-07,2026-11-07
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-11-07,216,247,38.94,,,2026-11-07,2026-11-07
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-11-07,1234,1318,130.02,3,3,2026-11-07,2026-11-07
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02-Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-11-07,753,853,111.73,1,1,2026-11-07,2026-11-07
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01 -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-11-07,41,43,3.16,,,2026-11-07,2026-11-07
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-11-07,6876,7438,712.12,12,12,2026-11-07,2026-11-07
+"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-11-07,1398,1637,194.69,1,2,2026-11-07,2026-11-07
+"2400 | TTM | Message | Eastern",Eastern-cafe,"TTM-Message-Eastern-Business Owner/SME",2026-11-07,471,541,55.05,2,2,2026-11-07,2026-11-07
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-Online,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-06,2016,2135,95.59,3,3,2026-11-06,2026-11-06
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe,"TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-06,553,575,62.47,3,3,2026-11-06,2026-11-06
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-06,0,0,0,1,1,2026-11-06,2026-11-06
+"2400 | TTM | Message | Bangkok Metropolitan",BKK-cafe-Retargeting,"TTM-Message-Bangkok Metropolis-Retargeting",2026-11-06,1541,1619,165.76,,,2026-11-06,2026-11-06
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop -Retargeting","TTM-Message-Bangkok Metropolis-Retargeting",2026-11-06,86,94,13.84,,,2026-11-06,2026-11-06
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 02","TTM-Message-Bangkok Metropolis-Constructors",2026-11-06,4559,4703,503.61,2,2,2026-11-06,2026-11-06
+"2400 | TTM | Message | Eastern","Eastern-Grocery shop","TTM-Message-Eastern-Business Owner/SME",2026-11-06,1547,1703,194.57,3,4,2026-11-06,2026-11-06
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-11-03,0,0,0,1,1,2026-11-03,2026-11-03
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-11-02,0,0,0,2,2,2026-11-02,2026-11-02
+"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-Constructors,2026-11-02,0,0,0,1,,2026-11-02,2026-11-02
+"2400 | TTM | Message | Eastern","Eastern-constructor 01",TTM-Message-Eastern-lookalike,2026-11-02,0,0,0,1,1,2026-11-02,2026-11-02
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-01,0,0,0,1,1,2026-11-01,2026-11-01
+"2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-11-01,0,0,0,1,1,2026-11-01,2026-11-01
+"2400 | TTM | Message | Eastern",Eastern-Online,TTM-Message-Eastern-lookalike,2026-11-01,0,0,0,1,1,2026-11-01,2026-11-01
