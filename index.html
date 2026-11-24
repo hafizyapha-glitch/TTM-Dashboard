@@ -199,6 +199,12 @@
       </button>
     </div>
     <div class="filter-row" style="margin: 0;">
+      <select id="filterObjective" aria-label="Filter by Objective" onchange="window.applyFilters()" style="min-width:170px;">
+        <option value="">ทุก Objective</option>
+        <option value="awareness">Awareness</option>
+        <option value="message">Message</option>
+        <option value="lead gen">Lead Gen</option>
+      </select>
       <select id="filterCampaign" onchange="window.applyFilters()">
         <option value="">ทุก Campaign</option>
       </select>
@@ -455,7 +461,8 @@ window.applySuggestions = function() {
   if (!selectedMonth) selectedMonth = 'Total';
 
   ['1', '2'].forEach(i => {
-    const row = suggestionData.find(r => r.box_id && r.box_id.toString() === i && r.month === selectedMonth);
+    const scoped = ['filterObjective','filterCampaign','filterPlatform'].some(id => document.getElementById(id).value);
+    const row = !scoped && suggestionData.find(r => r.box_id && r.box_id.toString() === i && r.month === selectedMonth);
     
     const titleEl = document.getElementById(`topAdTitle${i}`);
     const subEl = document.getElementById(`topAdSub${i}`);
@@ -594,6 +601,7 @@ window.fetchMissingYear = async function(year) {
 
       const parsedKw = kwTemp.map(r => {
         return {
+          campaign: r['Campaign name'] || r['Campaign'] || r['campaign'] || '',
           keyword: r['Keyword'] || r['Search Keyword'] || r['keyword'] || '',
           month: r['Month'] || r['month'] || r.inferredMonth || 'Total',
           year: year,
@@ -612,42 +620,63 @@ window.fetchMissingYear = async function(year) {
   }
 }
 
+// Campaign naming convention: ID | Brand | Objective | Campaign detail
+const baseObjectives = new Map([['awareness','Awareness'], ['message','Message'], ['lead gen','Lead Gen']]);
+function campaignObjective(name) {
+  const raw = String(name || '').split('|')[2]?.trim() || '';
+  if (!raw) return { key: 'unknown', label: 'Unclassified' };
+  const normalized = raw.toLowerCase().replace(/[_-]+/g, ' ').replace(/\s+/g, ' ').trim();
+  let key = normalized;
+  if (/^(lead[s]?)(?:\s*(?:gen|generation))?$/.test(normalized) || normalized === 'leadgen') key = 'lead gen';
+  else if (/^(message[s]?|messaging|messenger)$/.test(normalized)) key = 'message';
+  return { key, label: baseObjectives.get(key) || raw };
+}
+function filterScope() {
+  const year = Number(document.getElementById('settingYear').value);
+  const month = document.getElementById('filterMonth').value;
+  const platform = document.getElementById('filterPlatform').value;
+  return allData.filter(r => r.year === year && (!month || r.month === month) && (!platform || r.platform === platform));
+}
+function replaceOptions(select, entries, placeholder) {
+  const previous = select.value;
+  select.replaceChildren(new Option(placeholder, ''));
+  for (const [value, label] of entries) select.add(new Option(label, value));
+  select.value = [...select.options].some(o => o.value === previous) ? previous : '';
+}
+window.populateFilters = function() {
+  const scope = filterScope();
+  const objectives = new Map(baseObjectives);
+  for (const r of scope) {
+    const obj = campaignObjective(r.campaign);
+    if (!objectives.has(obj.key)) objectives.set(obj.key, obj.label);
+  }
+  const objectiveSelect = document.getElementById('filterObjective');
+  replaceOptions(objectiveSelect, objectives, 'ทุก Objective');
+  const objective = objectiveSelect.value;
+  const campaigns = [...new Set(scope.filter(r => !objective || campaignObjective(r.campaign).key === objective).map(r => r.campaign))].filter(Boolean).sort();
+  replaceOptions(document.getElementById('filterCampaign'), campaigns.map(c => [c,c]), 'ทุก Campaign');
+};
 window.applyFilters = function() {
+  window.populateFilters();
+  const objective = document.getElementById('filterObjective').value;
   const campaign = document.getElementById('filterCampaign').value;
   const platform = document.getElementById('filterPlatform').value;
   const monthFilter = document.getElementById('filterMonth').value;
-  const yearSelect = document.getElementById('settingYear');
-  const targetYear = yearSelect ? parseInt(yearSelect.value) : new Date().getFullYear();
-
-  filteredData = allData.filter(r => {
-    if (r.year !== targetYear) return false;
-    if (campaign && r.campaign !== campaign) return false;
-    if (platform && r.platform !== platform) return false;
-    if (monthFilter && r.month !== monthFilter) return false;
-    return true;
-  });
-
+  const targetYear = Number(document.getElementById('settingYear').value);
+  filteredData = filterScope().filter(r => (!objective || campaignObjective(r.campaign).key === objective) && (!campaign || r.campaign === campaign));
+  const googleCampaigns = new Set(filteredData.filter(r => r.platform === 'Google').map(r => r.campaign));
   filteredKeywordData = keywordData.filter(r => {
-    if (r.year !== targetYear) return false;
-    if (monthFilter && r.month !== monthFilter) return false;
+    if (r.year !== targetYear || (monthFilter && r.month !== monthFilter) || (platform && platform !== 'Google')) return false;
+    if (objective || campaign) return !!r.campaign && googleCampaigns.has(r.campaign) && (!objective || campaignObjective(r.campaign).key === objective) && (!campaign || r.campaign === campaign);
     return true;
   });
-
   window.renderAll();
-  window.applySuggestions(); 
-}
-
+  window.applySuggestions();
+};
 window.clearFilters = function() {
-  document.getElementById('filterCampaign').value = '';
-  document.getElementById('filterPlatform').value = '';
-  document.getElementById('filterMonth').value = '';
+  for (const id of ['filterObjective','filterCampaign','filterPlatform','filterMonth']) document.getElementById(id).value = '';
   window.applyFilters();
-}
-
-window.populateFilters = function() {
-  const campaigns = [...new Set(allData.map(r=>r.campaign))].filter(c=>c).sort();
-  document.getElementById('filterCampaign').innerHTML = '<option value="">ทุก Campaign</option>'+campaigns.map(c=>`<option value="${c}">${c}</option>`).join('');
-}
+};
 
 window.handleFbGallerySort = function(val) {
   currentFbGallerySort = val;
