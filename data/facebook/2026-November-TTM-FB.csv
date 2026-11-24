@@ -1,13 +1,13 @@
 ﻿"Campaign name","Ad name","Ad set name",Day,Reach,Impressions,"Amount spent (THB)","Messaging conversations started",Leads,"Reporting starts","Reporting ends"
-"2400 | TTM | Awareness | BKK","awareness - BKK","TTM | Awareness | BKK",2026-11-23,35133,48263,325.81,,,2026-11-23,2026-11-23
-"2400 | TTM | Awareness | Eastern","awareness - Eastern","TTM | Awareness | Eastern",2026-11-23,29737,40581,257.13,,,2026-11-23,2026-11-23
-"2400 | TTM | Lead Gen | Eastern","Eastern- Merchant - Nov","TTM | Lead Gen | Eastern-Business Owner/SME",2026-11-23,2305,2588,191.05,,,2026-11-23,2026-11-23
-"2400 | TTM | Lead Gen | Eastern","Eastern-constructor - Nov","TTM | Lead Gen | Eastern-Eastern-Constructors",2026-11-23,6362,7044,452.51,1,1,2026-11-23,2026-11-23
-"2400 | TTM | Lead Gen | BKK","Eastern- Merchant - Nov","TTM | Lead Gen | BKK-lookalike",2026-11-23,1998,2144,157.61,,4,2026-11-23,2026-11-23
-"2400 | TTM | Lead Gen | BKK","Eastern-constructor - Nov","TTM | Lead Gen | BKK-Constructors",2026-11-23,4367,5037,391.4,,9,2026-11-23,2026-11-23
-"2400 | TTM | Lead Gen | BKK","Eastern- Merchant - Nov","TTM | Lead Gen | BKK-Business Owner/SME",2026-11-23,3077,3430,218.61,,2,2026-11-23,2026-11-23
-"2400 | TTM | Lead Gen | BKK","Eastern-constructor - Nov","TTM | Lead Gen | BKK-lookalike",2026-11-23,990,1065,103.88,,,2026-11-23,2026-11-23
-"2400 | TTM | Lead Gen | Eastern",test,"TTM | Lead Gen | Eastern-lookalike",2026-11-23,651,659,54.79,1,1,2026-11-23,2026-11-23
+"2400 | TTM | Awareness | BKK","awareness - BKK","TTM | Awareness | BKK",2026-11-23,35158,48289,326.03,,,2026-11-23,2026-11-23
+"2400 | TTM | Awareness | Eastern","awareness - Eastern","TTM | Awareness | Eastern",2026-11-23,29737,40612,257.37,,,2026-11-23,2026-11-23
+"2400 | TTM | Lead Gen | Eastern","Eastern- Merchant - Nov","TTM | Lead Gen | Eastern-Business Owner/SME",2026-11-23,2312,2593,191.14,,,2026-11-23,2026-11-23
+"2400 | TTM | Lead Gen | Eastern","Eastern-constructor - Nov","TTM | Lead Gen | Eastern-Eastern-Constructors",2026-11-23,6368,7048,452.71,1,1,2026-11-23,2026-11-23
+"2400 | TTM | Lead Gen | BKK","BKK- Merchant - Nov","TTM | Lead Gen | BKK-lookalike",2026-11-23,1998,2147,157.75,,4,2026-11-23,2026-11-23
+"2400 | TTM | Lead Gen | BKK","BKK-constructor - Nov","TTM | Lead Gen | BKK-Constructors",2026-11-23,4368,5041,393.3,,9,2026-11-23,2026-11-23
+"2400 | TTM | Lead Gen | BKK","BKK- Merchant - Nov","TTM | Lead Gen | BKK-Business Owner/SME",2026-11-23,3082,3433,218.72,,2,2026-11-23,2026-11-23
+"2400 | TTM | Lead Gen | BKK","BKK-constructor - Nov","TTM | Lead Gen | BKK-lookalike",2026-11-23,990,1066,103.92,,,2026-11-23,2026-11-23
+"2400 | TTM | Lead Gen | Eastern",test,"TTM | Lead Gen | Eastern-lookalike",2026-11-23,653,660,54.89,1,1,2026-11-23,2026-11-23
 "2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-11-19,0,0,0,1,1,2026-11-19,2026-11-19
 "2400 | TTM | Message | Bangkok Metropolitan","BKK-constructor 01","TTM-Message-Bangkok Metropolis-Constructors",2026-11-18,0,0,0,1,1,2026-11-18,2026-11-18
 "2400 | TTM | Message | Bangkok Metropolitan","BKK-Grocery shop","TTM-Message-Bangkok Metropolis-Business Owner/SME",2026-11-17,0,0,0,1,1,2026-11-17,2026-11-17
